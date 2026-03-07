@@ -2,52 +2,43 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className="border-t border-zinc-200 bg-zinc-50 py-20 dark:border-zinc-800 dark:bg-black">
+        <footer className="border-t border-black/5 bg-neutral-200 py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-12">
-                <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
-                    <div className="col-span-1 md:col-span-1">
-                        <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-950 text-white dark:bg-white dark:text-black">
-                                <span className="text-sm font-bold">D</span>
+                <div className="grid grid-cols-1 gap-16 md:grid-cols-4">
+                    <div className="col-span-1 md:col-span-2">
+                        <Link href="/" className="flex items-center gap-4 transition-opacity hover:opacity-80">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-900 text-white">
+                                <span className="text-xl font-bold">V</span>
                             </div>
-                            <span className="text-lg font-bold tracking-tight text-zinc-950 dark:text-white">Dollop</span>
+                            <span className="text-2xl font-black tracking-tighter text-neutral-900">VOYAGE</span>
                         </Link>
-                        <p className="mt-6 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
-                            Elevating web experiences with premium design systems and components. Built for modern creators.
+                        <p className="mt-8 max-w-sm text-lg font-medium leading-relaxed text-neutral-600">
+                            Elevating travel experiences with curated escapes and seamless bookings. Discover the world's most exclusive destinations with VOYAGE.
                         </p>
                     </div>
 
                     <div>
-                        <h4 className="text-sm font-bold uppercase tracking-widest text-zinc-950 dark:text-white">Company</h4>
-                        <ul className="mt-6 space-y-4">
-                            <li><Link href="/" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white">About</Link></li>
-                            <li><Link href="/" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white">Careers</Link></li>
-                            <li><Link href="/" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white">Support</Link></li>
+                        <h4 className="text-xs font-black uppercase tracking-[0.3em] text-neutral-900">Explore</h4>
+                        <ul className="mt-8 space-y-6">
+                            <li><Link href="/destinations" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Destinations</Link></li>
+                            <li><Link href="/packages" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Travel Packages</Link></li>
+                            <li><Link href="/blog" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Travel Blog</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-sm font-bold uppercase tracking-widest text-zinc-950 dark:text-white">Product</h4>
-                        <ul className="mt-6 space-y-4">
-                            <li><Link href="/" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white">Features</Link></li>
-                            <li><Link href="/" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white">Templates</Link></li>
-                            <li><Link href="/" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white">Pricing</Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="text-sm font-bold uppercase tracking-widest text-zinc-950 dark:text-white">Legal</h4>
-                        <ul className="mt-6 space-y-4">
-                            <li><Link href="/" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white">Privacy Policy</Link></li>
-                            <li><Link href="/" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white">Terms of Service</Link></li>
-                            <li><Link href="/" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white">Cookie Policy</Link></li>
+                        <h4 className="text-xs font-black uppercase tracking-[0.3em] text-neutral-900">Support</h4>
+                        <ul className="mt-8 space-y-6">
+                            <li><Link href="/about" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">About Us</Link></li>
+                            <li><Link href="#" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Help Center</Link></li>
+                            <li><Link href="#" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Privacy Policy</Link></li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="mt-20 flex flex-col items-center justify-between border-t border-zinc-200 pt-8 dark:border-zinc-800 sm:flex-row">
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                        © {new Date().getFullYear()} Dollop Inc. All rights reserved.
+                <div className="mt-24 border-t border-black/5 pt-12 text-center md:text-left">
+                    <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+                        © {new Date().getFullYear()} VOYAGE TRAVEL INC. ALL RIGHTS RESERVED.
                     </p>
                 </div>
             </div>
