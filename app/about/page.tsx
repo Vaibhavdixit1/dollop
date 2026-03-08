@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Philosophy from "@/components/Philosophy";
 import CTA from "@/components/CTA";
 
 export default function AboutPage() {
@@ -15,6 +16,7 @@ export default function AboutPage() {
                         <p className="text-xl font-medium leading-relaxed text-neutral-600">We search for the hidden, the authentic, and the extraordinary. Each VOYAGE experience is hand-picked to ensure it meets our rigorous standards of design, service, and emotional impact.</p>
                     </div>
                 </div>
+                <Philosophy />
                 <CTA />
             </main>
             <Footer />

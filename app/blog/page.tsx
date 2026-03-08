@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BlogExplorer from "@/components/BlogExplorer";
 import CTA from "@/components/CTA";
 
 export default function BlogPage() {
@@ -19,13 +20,14 @@ export default function BlogPage() {
                                 </div>
                                 <div className="mt-8 px-2">
                                     <span className="text-[10px] font-black tracking-[0.3em] text-neutral-400 uppercase">February 20, 2026</span>
-                                    <h2 className="mt-4 text-3xl font-black text-neutral-900 group-hover:underline underline-offset-8 transition-all">THE SECRET BEACHES OF SOUTHERN JAPAN</h2>
+                                    <h2 className="mt-4 text-3xl font-black text-neutral-900 group-hover:underline underline-offset-8 transition-all uppercase tracking-tighter">THE SECRET BEACHES OF SOUTHERN JAPAN</h2>
                                     <p className="mt-6 text-lg font-medium text-neutral-600 leading-relaxed line-clamp-2">Discover the untouched coastal paradises of Okinawa, where luxury meets the emerald sea in ways you've never imagined.</p>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
+                <BlogExplorer />
                 <CTA />
             </main>
             <Footer />
