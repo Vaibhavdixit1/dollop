@@ -1,12 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 
 export default function PackagesPage() {
     return (
         <div className="flex min-h-screen flex-col bg-neutral-200">
             <Header />
-            <main className="flex-grow pt-40 px-6 lg:px-12">
-                <div className="mx-auto max-w-7xl">
+            <main className="flex-grow pt-40">
+                <div className="mx-auto max-w-7xl px-6 lg:px-12">
                     <h1 className="text-8xl font-black tracking-tighter text-neutral-900 uppercase">EXCLUSIVE <br /> PACKAGES</h1>
                     <p className="mt-8 max-w-2xl text-xl font-bold text-neutral-500 uppercase tracking-widest leading-relaxed">CURATED DEALS DESIGNED FOR THE ULTIMATE TRAVEL EXPERIENCE.</p>
 
@@ -20,6 +21,9 @@ export default function PackagesPage() {
                             </div>
                         ))}
                     </div>
+                </div>
+                <div className="mt-32">
+                    <CTA />
                 </div>
             </main>
             <Footer />

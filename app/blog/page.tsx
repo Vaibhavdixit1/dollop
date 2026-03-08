@@ -1,12 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 
 export default function BlogPage() {
     return (
         <div className="flex min-h-screen flex-col bg-neutral-200">
             <Header />
-            <main className="flex-grow pt-40 px-6 lg:px-12 pb-32">
-                <div className="mx-auto max-w-7xl">
+            <main className="flex-grow pt-40">
+                <div className="mx-auto max-w-7xl px-6 lg:px-12 pb-32">
                     <span className="text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">Voyage Journal</span>
                     <h1 className="mt-8 text-8xl font-black tracking-tighter text-neutral-900 uppercase">THE INSIDER <br /> TRAVEL STORIES</h1>
 
@@ -25,6 +26,7 @@ export default function BlogPage() {
                         ))}
                     </div>
                 </div>
+                <CTA />
             </main>
             <Footer />
         </div>
