@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export default function SignupPage() {
     return (
-        <div className="flex h-screen w-full items-center justify-center bg-neutral-200 overflow-hidden selection:bg-neutral-900 selection:text-white">
-            <div className="flex w-full max-w-6xl h-[700px] overflow-hidden rounded-[48px] bg-white shadow-2xl transition-all hover:scale-[1.005]">
+        <div className="flex min-h-screen w-full items-center justify-center bg-neutral-200 p-4 md:p-8 selection:bg-neutral-900 selection:text-white">
+            <div className="flex w-full max-w-6xl md:h-[700px] overflow-hidden rounded-[32px] md:rounded-[48px] bg-white shadow-2xl transition-all hover:scale-[1.005]">
 
                 {/* Visual Side */}
                 <div className="relative hidden w-[45%] md:block">
@@ -22,7 +22,7 @@ export default function SignupPage() {
                 </div>
 
                 {/* Form Side */}
-                <div className="flex w-full flex-col justify-center p-10 md:w-[55%] lg:p-14">
+                <div className="flex w-full flex-col justify-center p-8 sm:p-10 md:w-[55%] lg:p-14">
                     <div className="mb-6">
                         <Link href="/" className="inline-flex items-center gap-3 active:scale-95 transition-transform">
                             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-neutral-900 text-white shadow-xl">
@@ -30,8 +30,8 @@ export default function SignupPage() {
                             </div>
                             <span className="text-lg font-black tracking-tighter text-neutral-900 uppercase leading-none">VOYAGE</span>
                         </Link>
-                        <h1 className="mt-6 text-3xl font-black tracking-tighter text-neutral-900 uppercase leading-none">START YOUR VOYAGE</h1>
-                        <p className="mt-2 text-sm font-medium text-neutral-500 uppercase tracking-widest leading-none">Join our exclusive travel membership.</p>
+                        <h1 className="mt-6 text-2xl md:text-3xl font-black tracking-tighter text-neutral-900 uppercase leading-none">START YOUR VOYAGE</h1>
+                        <p className="mt-2 text-[10px] sm:text-xs font-medium text-neutral-500 uppercase tracking-widest leading-none">Join our exclusive travel membership.</p>
                     </div>
 
                     <form className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3" onSubmit={(e) => e.preventDefault()}>
@@ -40,7 +40,7 @@ export default function SignupPage() {
                             <input
                                 type="text"
                                 placeholder="John"
-                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-5 py-3.5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white"
+                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-5 py-3 md:py-3.5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white"
                             />
                         </div>
                         <div className="space-y-1.5">
@@ -48,7 +48,7 @@ export default function SignupPage() {
                             <input
                                 type="text"
                                 placeholder="Doe"
-                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-5 py-3.5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white"
+                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-5 py-3 md:py-3.5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white"
                             />
                         </div>
 
@@ -57,7 +57,7 @@ export default function SignupPage() {
                             <input
                                 type="email"
                                 placeholder="name@example.com"
-                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-5 py-3.5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white"
+                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-5 py-3 md:py-3.5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white"
                             />
                         </div>
 
@@ -66,7 +66,7 @@ export default function SignupPage() {
                             <input
                                 type="password"
                                 placeholder="••••••••"
-                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-5 py-3.5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white"
+                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-5 py-3 md:py-3.5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white"
                             />
                         </div>
 
@@ -78,7 +78,7 @@ export default function SignupPage() {
                         </div>
 
                         <div className="md:col-span-2 pt-2">
-                            <button className="w-full cursor-pointer rounded-2xl bg-neutral-900 py-4.5 text-sm font-black uppercase tracking-[0.2em] text-white shadow-xl transition-all hover:bg-neutral-800 active:scale-[0.98]">
+                            <button className="w-full cursor-pointer rounded-2xl bg-neutral-900 py-4 md:py-4.5 text-sm font-black uppercase tracking-[0.2em] text-white shadow-xl transition-all hover:bg-neutral-800 active:scale-[0.98]">
                                 CREATE ACCOUNT
                             </button>
                         </div>
