@@ -2,30 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogExplorer from "@/components/BlogExplorer";
 import CTA from "@/components/CTA";
-
-const blogPosts = [
-    {
-        id: 1,
-        date: 'March 10, 2026',
-        title: 'The Secret Beaches of Southern Japan',
-        excerpt: 'Discover the untouched coastal paradises of Okinawa, where luxury meets the emerald sea in ways you’ve never imagined.',
-        image: 'https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=800'
-    },
-    {
-        id: 2,
-        date: 'March 05, 2026',
-        title: 'Architecture of the Alps: Modern Escapes',
-        excerpt: 'Exploring the intersection of brutalist design and natural majesty in the latest Swiss mountain retreats.',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800'
-    },
-    {
-        id: 3,
-        date: 'February 28, 2026',
-        title: 'Curation vs Tourism: The New Travel',
-        excerpt: 'Why the modern elite are moving away from traditional sightseeing towards deep, curated cultural immersion.',
-        image: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=800'
-    }
-];
+import Link from "next/link";
+import { blogPosts } from "@/lib/blog-data";
 
 export default function BlogPage() {
     return (
@@ -38,7 +16,7 @@ export default function BlogPage() {
 
                     <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
                         {blogPosts.map((post) => (
-                            <div key={post.id} className="group cursor-pointer">
+                            <Link key={post.id} href={`/blog/${post.slug}`} className="group cursor-pointer">
                                 <div className="aspect-[16/10] overflow-hidden rounded-[24px] md:rounded-[32px] border border-black/5 bg-white shadow-lg transition-all hover:shadow-2xl">
                                     <img
                                         src={post.image}
@@ -51,7 +29,7 @@ export default function BlogPage() {
                                     <h2 className="mt-3 md:mt-4 text-2xl md:text-3xl font-black text-neutral-900 group-hover:underline underline-offset-8 transition-all uppercase tracking-tighter leading-tight">{post.title}</h2>
                                     <p className="mt-4 md:mt-6 text-base md:text-lg font-medium text-neutral-600 leading-relaxed line-clamp-2">{post.excerpt}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
