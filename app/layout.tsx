@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Experience luxury travel like never before. From hidden tropical paradises to majestic mountain peaks, VOYAGE curates the world's most exclusive escapes.",
 };
 
+import ScrollToTop from "@/components/ScrollToTop";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,6 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

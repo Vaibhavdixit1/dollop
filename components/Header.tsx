@@ -29,9 +29,11 @@ const Header = () => {
 
     const navLinks = [
         { name: 'Destinations', href: '/destinations' },
+        { name: 'Experiences', href: '/experiences' },
         { name: 'Packages', href: '/packages' },
         { name: 'Blog', href: '/blog' },
         { name: 'About', href: '/about' },
+        { name: 'Contact', href: '/contact' },
     ];
 
     const menuVariants = {

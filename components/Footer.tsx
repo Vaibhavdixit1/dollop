@@ -22,6 +22,7 @@ const Footer = () => {
                             <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-neutral-900">Explore</h4>
                             <ul className="mt-6 md:mt-8 space-y-4 md:space-y-6">
                                 <li><Link href="/destinations" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Destinations</Link></li>
+                                <li><Link href="/experiences" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Experiences</Link></li>
                                 <li><Link href="/packages" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Travel Packages</Link></li>
                                 <li><Link href="/blog" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Travel Blog</Link></li>
                             </ul>
@@ -31,6 +32,7 @@ const Footer = () => {
                             <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-neutral-900">Support</h4>
                             <ul className="mt-6 md:mt-8 space-y-4 md:space-y-6">
                                 <li><Link href="/about" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">About Us</Link></li>
+                                <li><Link href="/contact" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Contact & Support</Link></li>
                                 <li><Link href="#" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Help Center</Link></li>
                                 <li><Link href="#" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Privacy Policy</Link></li>
                             </ul>
