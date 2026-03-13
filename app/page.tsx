@@ -1,8 +1,13 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import DestinationGrid from "@/components/DestinationGrid";
+import Partners from "@/components/Partners";
 import Features from "@/components/Features";
+import HowItWorks from "@/components/HowItWorks";
+import DestinationGrid from "@/components/DestinationGrid";
+import TravelGallery from "@/components/TravelGallery";
+import TravelStats from "@/components/TravelStats";
 import Testimonials from "@/components/Testimonials";
+import Newsletter from "@/components/Newsletter";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -12,9 +17,14 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <Partners />
         <Features />
+        <HowItWorks />
         <DestinationGrid />
+        <TravelGallery />
+        <TravelStats />
         <Testimonials />
+        <Newsletter />
         <CTA />
       </main>
       <Footer />
