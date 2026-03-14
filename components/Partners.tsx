@@ -21,11 +21,17 @@ const Partners = () => {
     return (
         <section className="bg-neutral-200 py-20 md:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden border-y border-black/5">
             <div className="mx-auto max-w-7xl">
-                <div className="text-center mb-12 md:mb-16">
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-12 md:mb-16"
+                >
                     <span className="text-[10px] sm:text-xs font-black tracking-[0.5em] text-neutral-400 uppercase">
                         Trusted Partners
                     </span>
-                </div>
+                </motion.div>
 
                 <div ref={ref} className="relative">
                     {/* Fade edges */}

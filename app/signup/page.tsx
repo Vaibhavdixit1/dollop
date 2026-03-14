@@ -1,11 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function SignupPage() {
     return (
         <div className="flex min-h-screen w-full items-center justify-center bg-neutral-200 p-4 md:p-8 selection:bg-neutral-900 selection:text-white">
-            <div className="flex w-full max-w-6xl md:h-[700px] overflow-hidden rounded-[32px] md:rounded-[48px] bg-white shadow-2xl transition-all hover:scale-[1.005]">
+            <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="flex w-full max-w-6xl md:h-[700px] overflow-hidden rounded-[32px] md:rounded-[48px] bg-white shadow-2xl transition-all hover:scale-[1.005]"
+            >
 
                 {/* Visual Side */}
                 <div className="relative hidden w-[45%] md:block">
@@ -91,7 +97,7 @@ export default function SignupPage() {
                         </p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 }
