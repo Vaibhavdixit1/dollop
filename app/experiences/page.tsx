@@ -1,7 +1,10 @@
+'use client';
+
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTA from '@/components/CTA';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const experiences = [
     {
@@ -74,7 +77,12 @@ export default function ExperiencesPage() {
             <Header />
             <main className="flex-grow pt-32 md:pt-40">
                 {/* Hero */}
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 pb-16 md:pb-20">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 pb-16 md:pb-20"
+                >
                     <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">Beyond Ordinary</span>
                     <h1 className="mt-6 md:mt-8 text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-neutral-900 uppercase leading-[1.1]">
                         CURATED <br /> EXPERIENCES
@@ -82,10 +90,15 @@ export default function ExperiencesPage() {
                     <p className="mt-8 md:mt-12 max-w-2xl text-lg md:text-xl font-medium leading-relaxed text-neutral-600">
                         These aren&apos;t tours. They&apos;re once-in-a-lifetime moments designed to leave a permanent imprint on your soul. Every experience is exclusive to VOYAGE members.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Category filters */}
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 pb-12 md:pb-16">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 pb-12 md:pb-16"
+                >
                     <div className="flex flex-wrap gap-3">
                         {categories.map((cat, i) => (
                             <button
@@ -100,15 +113,19 @@ export default function ExperiencesPage() {
                             </button>
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Experiences Grid */}
                 <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-12">
                     <div className="mx-auto max-w-7xl">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                            {experiences.map((exp) => (
-                                <div
+                            {experiences.map((exp, i) => (
+                                <motion.div
                                     key={exp.id}
+                                    initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                    viewport={{ once: true, margin: '-50px' }}
+                                    transition={{ duration: 0.5, delay: i * 0.1 }}
                                     className="group flex flex-col overflow-hidden rounded-[32px] md:rounded-[40px] border border-black/5 bg-neutral-50 transition-all hover:shadow-2xl hover:-translate-y-1"
                                 >
                                     <div className="relative aspect-[16/10] overflow-hidden">
@@ -148,7 +165,7 @@ export default function ExperiencesPage() {
                                             </Link>
                                         </div>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>

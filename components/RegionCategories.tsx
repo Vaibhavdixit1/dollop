@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 const categories = [
     { title: 'TROPICAL PARADISE', count: '42 Locations', image: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=800' },
     { title: 'ARCTIC ESCAPES', count: '18 Locations', image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800' },
@@ -11,14 +12,27 @@ const RegionCategories = () => {
     return (
         <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-12">
             <div className="mx-auto max-w-7xl">
-                <div className="flex flex-col items-center text-center">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ duration: 0.6 }}
+                    className="flex flex-col items-center text-center"
+                >
                     <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">Explore by Type</span>
                     <h2 className="mt-6 md:mt-8 text-4xl sm:text-6xl font-black tracking-tighter text-neutral-900 uppercase">WHERE DO YOU <br /> BELONG?</h2>
-                </div>
+                </motion.div>
 
                 <div className="mt-16 md:mt-24 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    {categories.map((cat) => (
-                        <div key={cat.title} className="group relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden rounded-[32px] md:rounded-[40px] cursor-pointer shadow-lg transition-transform hover:-translate-y-2">
+                    {categories.map((cat, i) => (
+                        <motion.div 
+                            key={cat.title} 
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            viewport={{ once: true, margin: '-50px' }}
+                            transition={{ duration: 0.5, delay: i * 0.15 }}
+                            className="group relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden rounded-[32px] md:rounded-[40px] cursor-pointer shadow-lg transition-transform hover:-translate-y-2"
+                        >
                             <img
                                 src={cat.image}
                                 alt={cat.title}
@@ -29,7 +43,7 @@ const RegionCategories = () => {
                                 <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-white/60">{cat.count}</span>
                                 <h3 className="mt-2 text-xl md:text-2xl font-black text-white uppercase leading-none">{cat.title}</h3>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
