@@ -17,7 +17,7 @@ export default function LoginPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     <div className="absolute bottom-12 left-12 right-12">
                         <span className="text-xs font-black uppercase tracking-[0.4em] text-white/70">Luxury Escapes</span>
-                        <h2 className="mt-4 text-4xl font-black text-white leading-tight">EXPLORE THE <br />WORLD'S FINEST.</h2>
+                        <h2 className="mt-4 text-4xl font-black text-white leading-tight">EXPLORE THE <br />WORLD&apos;S FINEST.</h2>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@ export default function LoginPage() {
 
                     <div className="mt-8 pt-8 border-t border-neutral-50">
                         <p className="text-sm font-medium text-neutral-500 uppercase tracking-widest text-center md:text-left">
-                            DON'T HAVE AN ACCOUNT?{' '}
+                            DON&apos;T HAVE AN ACCOUNT?{' '}
                             <Link href="/signup" className="font-black text-neutral-900 hover:underline underline-offset-4 ml-1">SIGN UP</Link>
                         </p>
                     </div>

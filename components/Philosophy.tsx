@@ -28,7 +28,7 @@ const Philosophy = () => {
                     </div>
                     <div className="lg:w-1/2">
                         <p className="text-xl md:text-2xl font-bold leading-tight text-neutral-900 tracking-tight">
-                            We believe that the best journeys aren't measured in miles, but in the depth of the moments they create. We exist to facilitate those moments.
+                            We believe that the best journeys aren&apos;t measured in miles, but in the depth of the moments they create. We exist to facilitate those moments.
                         </p>
                     </div>
                 </div>

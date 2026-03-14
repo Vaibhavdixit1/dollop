@@ -13,7 +13,7 @@ const Footer = () => {
                             <span className="text-xl sm:text-2xl font-black tracking-tighter text-neutral-900">VOYAGE</span>
                         </Link>
                         <p className="mt-6 md:mt-8 max-w-sm text-base md:text-lg font-medium leading-relaxed text-neutral-600">
-                            Elevating travel experiences with curated escapes and seamless bookings. Discover the world's most exclusive destinations with VOYAGE.
+                            Elevating travel experiences with curated escapes and seamless bookings. Discover the world&apos;s most exclusive destinations with VOYAGE.
                         </p>
                     </div>
 

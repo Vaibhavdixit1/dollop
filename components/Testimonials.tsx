@@ -27,7 +27,7 @@ const Testimonials = () => {
                 <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     {testimonials.map((t, i) => (
                         <div key={i} className="relative rounded-[32px] md:rounded-[48px] bg-white p-8 md:p-16 shadow-xl transition-all hover:scale-[1.02]">
-                            <div className="absolute top-6 right-8 md:top-10 md:right-16 text-6xl md:text-8xl font-black text-neutral-100 uppercase select-none leading-none">"</div>
+                            <div className="absolute top-6 right-8 md:top-10 md:right-16 text-6xl md:text-8xl font-black text-neutral-100 uppercase select-none leading-none">&quot;</div>
                             <p className="relative z-10 text-xl md:text-3xl font-bold leading-tight text-neutral-900 tracking-tight">
                                 {t.quote}
                             </p>
