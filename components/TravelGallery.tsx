@@ -44,15 +44,27 @@ const TravelGallery = () => {
         <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-12 overflow-hidden">
             <div className="mx-auto max-w-7xl">
                 <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end mb-16 md:mb-24">
-                    <div className="max-w-xl">
+                    <motion.div 
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: '-50px' }}
+                        transition={{ duration: 0.6 }}
+                        className="max-w-xl"
+                    >
                         <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">Visual Stories</span>
                         <h2 className="mt-6 md:mt-8 text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter text-neutral-900 uppercase leading-none">
                             MOMENTS <br /> CAPTURED
                         </h2>
-                    </div>
-                    <p className="max-w-sm text-lg md:text-xl font-medium text-neutral-600 leading-relaxed">
+                    </motion.div>
+                    <motion.p 
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: '-50px' }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="max-w-sm text-lg md:text-xl font-medium text-neutral-600 leading-relaxed"
+                    >
                         A glimpse into the extraordinary experiences curated by VOYAGE for our members.
-                    </p>
+                    </motion.p>
                 </div>
 
                 <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 auto-rows-[200px] md:auto-rows-[250px] gap-4 md:gap-6">

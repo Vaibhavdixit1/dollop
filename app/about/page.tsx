@@ -6,6 +6,7 @@ import Timeline from "@/components/Timeline";
 import TravelStats from "@/components/TravelStats";
 import Newsletter from "@/components/Newsletter";
 import CTA from "@/components/CTA";
+import ImageBand from "@/components/ImageBand";
 
 export default function AboutPage() {
     return (
@@ -64,19 +65,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Full-width image band */}
-                <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
-                    <img
-                        src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=2000"
-                        alt="Ocean view from a luxury resort"
-                        className="h-full w-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/30"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <p className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tighter text-white uppercase text-center px-4 leading-tight">
-                            &ldquo;TRAVEL IS THE ONLY THING YOU BUY <br className="hidden md:block" /> THAT MAKES YOU RICHER.&rdquo;
-                        </p>
-                    </div>
-                </section>
+                <ImageBand />
 
                 <Philosophy />
 

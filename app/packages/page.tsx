@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PackageTiers from "@/components/PackageTiers";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import FeaturedPackages from "@/components/FeaturedPackages";
 
 export default function PackagesPage() {
     return (
@@ -45,6 +46,7 @@ export default function PackagesPage() {
                     </div>
                 </div>
                 <div className="mt-24 md:mt-32">
+                    <FeaturedPackages />
                     <PackageTiers />
                     <FAQ />
                     <CTA />

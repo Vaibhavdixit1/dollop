@@ -4,6 +4,7 @@ import Partners from "@/components/Partners";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import DestinationGrid from "@/components/DestinationGrid";
+import FeaturedPackages from "@/components/FeaturedPackages";
 import TravelGallery from "@/components/TravelGallery";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import TravelStats from "@/components/TravelStats";
@@ -22,6 +23,7 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <DestinationGrid />
+        <FeaturedPackages />
         <TravelGallery />
         <InfiniteMarquee />
         <TravelStats />

@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 const testimonials = [
     {
         quote: "Voyage transformed our honeymoon into a cinematic experience we'll never forget. Every detail was perfection.",
@@ -19,14 +20,27 @@ const Testimonials = () => {
     return (
         <section className="bg-neutral-200 py-24 md:py-32 px-4 sm:px-6 lg:px-12">
             <div className="mx-auto max-w-7xl">
-                <div className="flex flex-col items-center text-center">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ duration: 0.6 }}
+                    className="flex flex-col items-center text-center"
+                >
                     <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">Voices of Voyage</span>
                     <h2 className="mt-6 md:mt-8 text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter text-neutral-900 uppercase">SHARED MEMORIES</h2>
-                </div>
+                </motion.div>
 
                 <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     {testimonials.map((t, i) => (
-                        <div key={i} className="relative rounded-[32px] md:rounded-[48px] bg-white p-8 md:p-16 shadow-xl transition-all hover:scale-[1.02]">
+                        <motion.div 
+                            key={i} 
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: '-50px' }}
+                            transition={{ duration: 0.6, delay: i * 0.2 }}
+                            className="relative rounded-[32px] md:rounded-[48px] bg-white p-8 md:p-16 shadow-xl transition-all hover:scale-[1.02]"
+                        >
                             <div className="absolute top-6 right-8 md:top-10 md:right-16 text-6xl md:text-8xl font-black text-neutral-100 uppercase select-none leading-none">&quot;</div>
                             <p className="relative z-10 text-xl md:text-3xl font-bold leading-tight text-neutral-900 tracking-tight">
                                 {t.quote}
@@ -40,7 +54,7 @@ const Testimonials = () => {
                                     <p className="text-[10px] md:text-sm font-bold text-neutral-400 uppercase tracking-widest">{t.role}</p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
