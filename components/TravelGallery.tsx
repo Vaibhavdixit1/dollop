@@ -34,6 +34,37 @@ const galleryImages = [
         alt: 'Spa and wellness center',
         span: '',
     },
+
+    {
+        src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&q=80&w=800',
+        alt: 'Desert adventure landscape',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800',
+        alt: 'Mountain hiking adventure',
+        span: 'row-span-2',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=800',
+        alt: 'Road trip through mountains',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800',
+        alt: 'Cliffside tropical beach',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=800',
+        alt: 'Desert sunset dunes',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800',
+        alt: 'Ocean tropical paradise',
+        span: '',
+    },
 ];
 
 const TravelGallery = () => {
@@ -44,7 +75,7 @@ const TravelGallery = () => {
         <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-12 overflow-hidden">
             <div className="mx-auto max-w-7xl">
                 <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end mb-16 md:mb-24">
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: '-50px' }}
@@ -56,7 +87,7 @@ const TravelGallery = () => {
                             MOMENTS <br /> CAPTURED
                         </h2>
                     </motion.div>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: '-50px' }}
