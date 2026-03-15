@@ -12,6 +12,9 @@ import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import RegionCategories from "@/components/RegionCategories";
+import Philosophy from "@/components/Philosophy";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -21,13 +24,16 @@ export default function Home() {
         <Hero />
         <Partners />
         <Features />
+        <Philosophy />
         <HowItWorks />
+        <RegionCategories />
         <DestinationGrid />
         <FeaturedPackages />
         <TravelGallery />
         <InfiniteMarquee />
         <TravelStats />
         <Testimonials />
+        <FAQ />
         <Newsletter />
         <CTA />
       </main>
