@@ -8,20 +8,68 @@ const packages = [
         id: 'pk-1',
         title: 'THE ANTARCTIC SILENCE',
         duration: '14 Days',
-        description: 'Journey to the edge of the world. Private icebreaker expedition with extreme-luxury geodesic dome stays on the frozen continent.',
+        description:
+            'Journey to the edge of the world. Private icebreaker expedition with extreme-luxury geodesic dome stays on the frozen continent.',
         price: 'From $45,000',
         spots: 'Only 8 spots remaining',
-        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200'
+        image:
+            'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200',
     },
     {
         id: 'pk-2',
         title: 'NAMIBIAN STARSCAPES',
         duration: '9 Days',
-        description: 'Fly-in safari across the oldest desert on Earth. Sleep under the darkest skies in a private luxury camp reachable only by helicopter.',
+        description:
+            'Fly-in safari across the oldest desert on Earth. Sleep under the darkest skies in a private luxury camp reachable only by helicopter.',
         price: 'From $32,000',
         spots: 'Waitlist available',
-        image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&q=80&w=1200'
-    }
+        image:
+            'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&q=80&w=1200',
+    },
+    {
+        id: 'pk-3',
+        title: 'ALPINE SUMMIT RETREAT',
+        duration: '7 Days',
+        description:
+            'Private helicopter access to the most secluded alpine resorts. Luxury chalets, guided glacier hikes, and gourmet mountain dining.',
+        price: 'From $21,000',
+        spots: 'Only 6 spots remaining',
+        image:
+            'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200',
+    },
+    {
+        id: 'pk-4',
+        title: 'SAHARA ROYAL CARAVAN',
+        duration: '10 Days',
+        description:
+            'Ride through golden dunes in a private desert caravan with luxury nomad tents, sunset camel journeys, and starlit banquets.',
+        price: 'From $18,000',
+        spots: 'Only 10 spots remaining',
+        image:
+            'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=1200',
+    },
+    {
+        id: 'pk-5',
+        title: 'PACIFIC ISLAND ESCAPE',
+        duration: '8 Days',
+        description:
+            'Stay in a private overwater villa in the Pacific. Crystal waters, yacht excursions, and chef-curated island dining experiences.',
+        price: 'From $24,000',
+        spots: 'Only 5 spots remaining',
+        image:
+            'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1200',
+    },
+    {
+        id: 'pk-6',
+        title: 'NORWEGIAN FJORD VOYAGE',
+        duration: '11 Days',
+        description:
+            'Sail through dramatic fjords aboard a luxury expedition yacht. Witness northern lights, glaciers, and remote Nordic villages.',
+        price: 'From $29,000',
+        spots: 'Only 7 spots remaining',
+        image:
+            'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1200',
+    },
 ];
 
 const FeaturedPackages = () => {
