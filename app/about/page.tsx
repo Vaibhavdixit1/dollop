@@ -4,7 +4,6 @@ import Philosophy from "@/components/Philosophy";
 import TeamSection from "@/components/TeamSection";
 import Timeline from "@/components/Timeline";
 import TravelStats from "@/components/TravelStats";
-import Newsletter from "@/components/Newsletter";
 import CTA from "@/components/CTA";
 import ImageBand from "@/components/ImageBand";
 
@@ -117,7 +116,6 @@ export default function AboutPage() {
                 <Timeline />
                 <TeamSection />
                 <TravelStats />
-                <Newsletter />
                 <CTA />
             </main>
             <Footer />

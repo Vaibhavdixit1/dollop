@@ -9,7 +9,6 @@ import TravelGallery from "@/components/TravelGallery";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import TravelStats from "@/components/TravelStats";
 import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import RegionCategories from "@/components/RegionCategories";
@@ -34,7 +33,6 @@ export default function Home() {
         <TravelStats />
         <Testimonials />
         <FAQ />
-        <Newsletter />
         <CTA />
       </main>
       <Footer />
