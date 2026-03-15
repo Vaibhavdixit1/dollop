@@ -11,7 +11,7 @@ const packages = [
         description: 'Journey to the edge of the world. Private icebreaker expedition with extreme-luxury geodesic dome stays on the frozen continent.',
         price: 'From $45,000',
         spots: 'Only 8 spots remaining',
-        image: 'https://images.unsplash.com/photo-1548680695-8e3926943801?auto=format&fit=crop&q=80&w=1200'
+        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200'
     },
     {
         id: 'pk-2',
@@ -20,7 +20,7 @@ const packages = [
         description: 'Fly-in safari across the oldest desert on Earth. Sleep under the darkest skies in a private luxury camp reachable only by helicopter.',
         price: 'From $32,000',
         spots: 'Waitlist available',
-        image: 'https://images.unsplash.com/photo-1682687982501-1e58f813fc0b?auto=format&fit=crop&q=80&w=1200'
+        image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&q=80&w=1200'
     }
 ];
 
@@ -32,7 +32,7 @@ const FeaturedPackages = () => {
         <section className="bg-neutral-900 py-24 md:py-32 px-4 sm:px-6 lg:px-12 text-white">
             <div className="mx-auto max-w-7xl">
                 <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end mb-16 md:mb-24">
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: '-50px' }}
@@ -44,7 +44,7 @@ const FeaturedPackages = () => {
                             SIGNATURE <br /> EXPEDITIONS
                         </h2>
                     </motion.div>
-                    <motion.button 
+                    <motion.button
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: '-50px' }}
@@ -75,7 +75,7 @@ const FeaturedPackages = () => {
                                     <span className="text-[10px] font-black uppercase tracking-widest text-white">{pkg.duration}</span>
                                 </div>
                             </div>
-                            
+
                             <div className="p-8 md:p-12">
                                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">{pkg.spots}</span>
                                 <h3 className="mt-4 text-2xl md:text-3xl font-black tracking-tight text-white uppercase leading-tight group-hover:underline underline-offset-8 transition-all">
@@ -84,7 +84,7 @@ const FeaturedPackages = () => {
                                 <p className="mt-6 text-base font-medium leading-relaxed text-white/60 line-clamp-2">
                                     {pkg.description}
                                 </p>
-                                
+
                                 <div className="mt-10 pt-8 border-t border-white/10 flex items-center justify-between">
                                     <p className="text-xl md:text-2xl font-black text-white">{pkg.price}</p>
                                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-neutral-900 transition-transform group-hover:scale-110 cursor-pointer">
