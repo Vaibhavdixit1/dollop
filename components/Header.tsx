@@ -31,6 +31,7 @@ const Header = () => {
         { name: 'Destinations', href: '/destinations' },
         { name: 'Experiences', href: '/experiences' },
         { name: 'Packages', href: '/packages' },
+        { name: 'Gallery', href: '/gallery' },
         { name: 'Blog', href: '/blog' },
         { name: 'About', href: '/about' },
         { name: 'Contact', href: '/contact' },
