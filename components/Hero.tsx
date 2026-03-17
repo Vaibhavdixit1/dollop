@@ -29,7 +29,7 @@ const Hero = () => {
                     className="text-balance text-4xl font-black leading-[1.1] tracking-tighter text-neutral-900 sm:text-7xl md:text-9xl"
                 >
                     YOUR JOURNEY <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-600 to-neutral-900 uppercase">Starts Here.</span>
+                    <span className="text-transparent bg-clip-text bg-linear-to-r from-neutral-600 to-neutral-900 uppercase">Starts Here.</span>
                 </motion.h1>
 
                 <motion.p 
@@ -62,9 +62,12 @@ const Hero = () => {
                             <span className="mt-0.5 md:mt-1 text-base md:text-lg font-bold text-neutral-900">Add guests</span>
                         </div>
                         <div className="flex items-center justify-center p-1 md:p-2">
-                            <button className="h-full w-full cursor-pointer rounded-2xl md:rounded-3xl bg-neutral-900 py-4 text-sm font-black uppercase tracking-widest text-white shadow-xl transition-all hover:scale-[1.02] active:scale-95">
+                            <a
+                                href="/destinations"
+                                className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-2xl md:rounded-3xl bg-neutral-900 py-4 text-sm font-black uppercase tracking-widest text-white shadow-xl transition-all hover:scale-[1.02] active:scale-95"
+                            >
                                 Explore Now
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </motion.div>

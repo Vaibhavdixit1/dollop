@@ -47,7 +47,7 @@ const Partners = () => {
                                 transition={{ duration: 0.4, delay: i * 0.08 }}
                                 className="flex-shrink-0 group cursor-pointer"
                             >
-                                <span className="text-sm md:text-lg font-black tracking-[0.15em] text-neutral-300 transition-colors duration-300 group-hover:text-neutral-900 whitespace-nowrap uppercase">
+                                <span className="text-sm md:text-lg font-black tracking-[0.15em] text-neutral-500 transition-colors duration-300 group-hover:text-neutral-900 whitespace-nowrap uppercase">
                                     {partner}
                                 </span>
                             </motion.div>

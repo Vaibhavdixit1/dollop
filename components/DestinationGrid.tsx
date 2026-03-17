@@ -1,8 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Link from 'next/link';
 
 const destinations = [
     { id: 1, name: 'Bora Bora', location: 'French Polynesia', price: '$2,400', rating: 4.9, image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800' },
@@ -31,16 +31,20 @@ const DestinationGrid = () => {
                             POPULAR <br /> DESTINATIONS
                         </p>
                     </motion.div>
-                    <motion.button 
+                    <motion.div 
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: '-50px' }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="group flex cursor-pointer items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-neutral-900 transition-all hover:gap-6"
                     >
-                        View All Destinations
-                        <span className="h-[1px] w-8 sm:w-12 bg-neutral-900 transition-all group-hover:w-16"></span>
-                    </motion.button>
+                        <Link
+                            href="/destinations"
+                            className="group flex cursor-pointer items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-neutral-900 transition-all hover:gap-6"
+                        >
+                            View All Destinations
+                            <span className="h-px w-8 sm:w-12 bg-neutral-900 transition-all group-hover:w-16"></span>
+                        </Link>
+                    </motion.div>
                 </div>
 
                 <div ref={ref} className="mt-16 md:mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -52,7 +56,7 @@ const DestinationGrid = () => {
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             className="group relative flex flex-col overflow-hidden rounded-[32px] md:rounded-[40px] border border-black/5 bg-white transition-all hover:-translate-y-2 hover:shadow-xl"
                         >
-                            <div className="relative aspect-[4/5] overflow-hidden">
+                            <div className="relative aspect-4/5 overflow-hidden">
                                 <img
                                     src={dest.image}
                                     alt={dest.name}

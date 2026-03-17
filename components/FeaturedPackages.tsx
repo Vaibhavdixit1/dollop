@@ -112,7 +112,7 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
                             className="group flex cursor-pointer items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-6"
                         >
                             {ctaLabel}
-                            <span className="h-[1px] w-8 sm:w-12 bg-white transition-all group-hover:w-16"></span>
+                            <span className="h-px w-8 sm:w-12 bg-white transition-all group-hover:w-16"></span>
                         </Link>
                     </motion.div>
                 </div>
@@ -126,7 +126,7 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
                             transition={{ duration: 0.6, delay: i * 0.2 }}
                             className="group flex flex-col overflow-hidden rounded-[32px] md:rounded-[48px] bg-neutral-800 border border-white/5"
                         >
-                            <div className="relative aspect-[16/10] overflow-hidden">
+                            <div className="relative aspect-16/10 overflow-hidden">
                                 <img
                                     src={pkg.image}
                                     alt={pkg.title}

@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-neutral-200">
       <Header />
-      <main className="flex-grow">
+      <main className="grow">
         <Hero />
         <Partners />
         <Features />
