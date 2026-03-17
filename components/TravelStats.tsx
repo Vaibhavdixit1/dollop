@@ -50,8 +50,8 @@ const TravelStats = () => {
         <section className="relative bg-neutral-900 py-24 md:py-32 px-4 sm:px-6 lg:px-12 overflow-hidden">
             {/* Subtle texture overlays */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.03)_0%,transparent_60%)]"></div>
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent"></div>
 
             <div ref={containerRef} className="relative z-10 mx-auto max-w-7xl">
                 <div className="text-center mb-16 md:mb-24">
