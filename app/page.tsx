@@ -26,7 +26,7 @@ export default function Home() {
         <HowItWorks />
         <RegionCategories />
         <DestinationGrid />
-        <FeaturedPackages />
+        <FeaturedPackages limit={2} buttonLabel="Show more" />
         <InfiniteMarquee />
         <TravelStats />
         <Testimonials />

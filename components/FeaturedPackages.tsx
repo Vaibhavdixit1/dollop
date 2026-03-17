@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
@@ -72,9 +73,17 @@ const packages = [
     },
 ];
 
-const FeaturedPackages = () => {
+type FeaturedPackagesProps = {
+    limit?: number;
+    buttonLabel?: string;
+};
+
+const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+    const visiblePackages = limit ? packages.slice(0, limit) : packages;
+    const ctaLabel = buttonLabel ?? (limit ? 'Show more' : 'View All Packages');
 
     return (
         <section className="bg-neutral-900 py-24 md:py-32 px-4 sm:px-6 lg:px-12 text-white">
@@ -92,20 +101,24 @@ const FeaturedPackages = () => {
                             SIGNATURE <br /> EXPEDITIONS
                         </h2>
                     </motion.div>
-                    <motion.button
+                    <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: '-50px' }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="group flex cursor-pointer items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-6"
                     >
-                        View All Packages
-                        <span className="h-[1px] w-8 sm:w-12 bg-white transition-all group-hover:w-16"></span>
-                    </motion.button>
+                        <Link
+                            href="/packages"
+                            className="group flex cursor-pointer items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-6"
+                        >
+                            {ctaLabel}
+                            <span className="h-[1px] w-8 sm:w-12 bg-white transition-all group-hover:w-16"></span>
+                        </Link>
+                    </motion.div>
                 </div>
 
                 <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    {packages.map((pkg, i) => (
+                    {visiblePackages.map((pkg, i) => (
                         <motion.div
                             key={pkg.id}
                             initial={{ opacity: 0, y: 40 }}

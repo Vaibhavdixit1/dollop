@@ -65,6 +65,21 @@ const galleryImages = [
         alt: 'Ocean tropical paradise',
         span: '',
     },
+    {
+        src: 'https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&q=80&w=800',
+        alt: 'Private yacht in turquoise bay',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&q=80&w=800',
+        alt: 'Night city skyline from rooftop pool',
+        span: 'row-span-2',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800',
+        alt: 'Snowy cabin under northern lights',
+        span: '',
+    },
 ];
 
 const TravelGallery = () => {
