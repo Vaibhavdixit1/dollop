@@ -80,6 +80,61 @@ const galleryImages = [
         alt: 'Snowy cabin under northern lights',
         span: '',
     },
+    {
+        src: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800',
+        alt: 'Wildlife safari at sunrise',
+        span: 'row-span-2',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800',
+        alt: 'Scenic mountain lake reflected',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&q=80&w=800',
+        alt: 'Tropical waterfall in the jungle',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800',
+        alt: 'Eiffel Tower at sunset',
+        span: 'row-span-2',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800',
+        alt: 'Hidden Nordic cabin',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1506466010722-395aa2bef877?auto=format&fit=crop&q=80&w=800',
+        alt: 'Ancient temple ruins',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?auto=format&fit=crop&q=80&w=800',
+        alt: 'Cobblestone streets of Havana',
+        span: 'row-span-2',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800',
+        alt: 'Jagged peaks of the Andes',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1493246507139-91e8bef99c02?auto=format&fit=crop&q=80&w=800',
+        alt: 'Morning mist over Lake Louise',
+        span: '',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=800',
+        alt: 'Santorini blue domes',
+        span: 'row-span-2',
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=800',
+        alt: 'Camping under a starry sky',
+        span: '',
+    },
 ];
 
 const TravelGallery = () => {

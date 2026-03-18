@@ -101,20 +101,22 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
                             SIGNATURE <br /> EXPEDITIONS
                         </h2>
                     </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: '-50px' }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        <Link
-                            href="/packages"
-                            className="group flex cursor-pointer items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-6"
+                    {!limit && (
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: '-50px' }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                            {ctaLabel}
-                            <span className="h-px w-8 sm:w-12 bg-white transition-all group-hover:w-16"></span>
-                        </Link>
-                    </motion.div>
+                            <Link
+                                href="/packages"
+                                className="group flex cursor-pointer items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-6"
+                            >
+                                {ctaLabel}
+                                <span className="h-px w-8 sm:w-12 bg-white transition-all group-hover:w-16"></span>
+                            </Link>
+                        </motion.div>
+                    )}
                 </div>
 
                 <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -156,6 +158,24 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
                         </motion.div>
                     ))}
                 </div>
+
+                {limit && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="mt-16 flex justify-center"
+                    >
+                        <Link
+                            href="/packages"
+                            className="group flex cursor-pointer items-center gap-6 rounded-full border border-white/10 bg-white/5 px-12 py-5 text-sm font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-white hover:text-neutral-900 active:scale-95"
+                        >
+                            {buttonLabel || 'Show more experiments'}
+                            <span className="text-xl transition-transform group-hover:translate-x-2">→</span>
+                        </Link>
+                    </motion.div>
+                )}
             </div>
         </section>
     );
