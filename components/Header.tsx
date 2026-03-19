@@ -2,10 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -24,6 +30,7 @@ const Header = () => {
         }
         return () => {
             document.body.style.overflow = 'unset';
+            document.body.style.overflow = 'auto'; // Fallback
         };
     }, [isMenuOpen]);
 
@@ -78,7 +85,7 @@ const Header = () => {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-semibold uppercase tracking-widest text-neutral-600 transition-colors hover:text-black"
+                            className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500 transition-all hover:text-black hover:tracking-[0.25em]"
                         >
                             {link.name}
                         </Link>
@@ -86,7 +93,7 @@ const Header = () => {
                 </nav>
 
                 <div className="flex items-center gap-4 relative z-[1010]">
-                    <Link href="/signup" className="hidden cursor-pointer rounded-full bg-neutral-900 px-8 py-3 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-neutral-800 active:scale-95 sm:block shadow-lg">
+                    <Link href="/signup" className="hidden cursor-pointer rounded-full bg-neutral-900 px-8 py-3 text-[10px] font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-neutral-800 active:scale-95 sm:block shadow-lg">
                         Book Now
                     </Link>
 
@@ -112,6 +119,12 @@ const Header = () => {
                     </button>
                 </div>
             </div>
+
+            {/* Scroll Progress Bar */}
+            <motion.div
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-neutral-900 origin-left z-[1011]"
+                style={{ scaleX }}
+            />
 
             {/* Mobile Navigation Overlay */}
             <AnimatePresence>

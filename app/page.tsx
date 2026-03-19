@@ -13,6 +13,7 @@ import Footer from "@/components/Footer";
 import RegionCategories from "@/components/RegionCategories";
 import Philosophy from "@/components/Philosophy";
 import FAQ from "@/components/FAQ";
+import Newsletter from "@/components/Newsletter";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         <TravelStats />
         <Testimonials />
         <FAQ />
+        <Newsletter />
         <CTA />
       </main>
       <Footer />
