@@ -1,36 +1,166 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VOYAGE
 
-## Getting Started
+VOYAGE is a luxury travel marketing website built with Next.js App Router, React, TypeScript, Tailwind CSS v4, and Framer Motion. The project presents a premium editorial-style brand experience across destinations, packages, experiences, gallery, blog, and lead-generation pages.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This repository currently represents a frontend-first product shell for a high-end travel brand. The site is composed of reusable visual sections and mostly static content, with lightweight client-side interactions for navigation, animations, gallery browsing, and form feedback.
+
+The project is best understood as:
+
+- A polished marketing site
+- A reusable component-driven landing page system
+- A static blog powered by local data
+- A prototype foundation for future backend integration
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- ESLint
+
+## Project Structure
+
+```text
+.
+├── app/                  # App Router pages and global app shell
+├── components/           # Reusable UI sections and interactive components
+├── lib/                  # Local data sources and shared utilities
+├── public/               # Static assets
+├── package.json          # Scripts and dependencies
+├── tsconfig.json         # TypeScript configuration
+├── next.config.ts        # Next.js configuration
+└── eslint.config.mjs     # ESLint configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Folder Guide
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### `app/`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contains route-level pages using the Next.js App Router.
 
-## Learn More
+- `layout.tsx`: Global app shell, metadata, fonts, and shared `ScrollToTop`
+- `page.tsx`: Homepage assembled from multiple reusable sections
+- `about/`, `destinations/`, `experiences/`, `packages/`, `gallery/`, `contact/`: Main marketing pages
+- `login/`, `signup/`: Auth-themed UI pages
+- `blog/page.tsx`: Blog listing page
+- `blog/[slug]/page.tsx`: Static blog detail route generated from local data
+- `globals.css`: Global styles and Tailwind theme variables
 
-To learn more about Next.js, take a look at the following resources:
+### `components/`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contains the visual building blocks used across routes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Examples:
 
-## Deploy on Vercel
+- Layout/navigation: `Header`, `Footer`, `ScrollToTop`
+- Homepage sections: `Hero`, `Partners`, `Features`, `HowItWorks`, `CTA`, `Newsletter`
+- Editorial/brand sections: `Philosophy`, `Testimonials`, `Timeline`, `TeamSection`
+- Commerce-inspired sections: `FeaturedPackages`, `PackageTiers`
+- Content discovery: `DestinationGrid`, `RegionCategories`, `TravelGallery`, `BlogExplorer`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Many of these are self-contained presentation components with embedded static content.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### `lib/`
+
+Contains local content and shared logic.
+
+- `blog-data.ts`: In-memory blog post dataset used by blog list and slug pages
+
+### `public/`
+
+Contains static SVG assets generated with the initial Next.js setup.
+
+## Routes
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Brand-focused homepage with multiple promotional sections |
+| `/about` | Company story, mission, founder narrative, team, timeline |
+| `/destinations` | Destination discovery page |
+| `/experiences` | Curated luxury experiences showcase |
+| `/packages` | Membership and package presentation |
+| `/gallery` | Visual gallery with lightbox interaction |
+| `/blog` | Blog listing page |
+| `/blog/[slug]` | Static blog article page |
+| `/contact` | Inquiry page with client-side form interaction |
+| `/login` | Login UI mockup |
+| `/signup` | Signup UI mockup |
+
+## Architecture Notes
+
+### Rendering model
+
+- The app uses the Next.js App Router
+- Most pages are static or server-rendered without dynamic data fetching
+- Interactive sections use client components where needed
+
+### Content model
+
+- Most copy and media references are embedded directly inside page or component files
+- Blog posts are stored locally in `lib/blog-data.ts`
+- There is no CMS or external API integration yet
+
+### Styling approach
+
+- Tailwind utility classes define most of the visual system
+- `app/globals.css` adds minimal global tokens and shared animation helpers
+- Typography and spacing are intentionally bold and editorial in tone
+
+### Motion and interactivity
+
+Framer Motion is used for:
+
+- Entrance animations
+- Scroll-based progress indicators
+- Mobile menu transitions
+- Gallery lightbox behavior
+- In-view reveal effects
+
+## Current Functional Status
+
+The project is visually complete in many areas, but functionally still frontend-only.
+
+Implemented:
+
+- Multi-page navigation
+- Responsive layouts
+- Scroll-based UI enhancements
+- Static blog generation
+- Gallery lightbox interaction
+- Basic client-side form state handling
+
+Not implemented yet:
+
+- Real authentication
+- API routes or backend services
+- Database or persistent storage
+- CMS integration
+- Form submission handling
+- Search, filtering, or booking workflows
+- Payment or membership logic
+
+## Local Development
+
+Install dependencies and start the development server:
+
+```bash
+npm install
+npm run dev
+```
+
+Production build:
+
+```bash
+npm run build
+npm run start
+```
+
+Lint the project:
+
+```bash
+npm run lint
+```
