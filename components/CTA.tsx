@@ -7,7 +7,7 @@ const CTA = () => {
     return (
         <section className="relative overflow-hidden bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-12">
             {/* Abstract Background Element */}
-            <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-500/5 blur-[120px]"></div>
+            <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-neutral-400/10 blur-[120px]"></div>
             <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-neutral-200/50 blur-[100px]"></div>
 
             <div className="relative z-10 mx-auto max-w-5xl text-center">

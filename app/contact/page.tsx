@@ -84,65 +84,67 @@ export default function ContactPage() {
 
                                 <form onSubmit={handleSubmit} className="mt-12 md:mt-16 space-y-8">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                                        <div className="space-y-3">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400 ml-1">Full Name</label>
+                                        <div className="relative">
                                             <input
                                                 type="text"
+                                                id="name"
                                                 value={formData.name}
                                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                                placeholder="Enter your name"
+                                                placeholder=" "
                                                 required
-                                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-8 py-5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white focus:ring-4 focus:ring-black/5"
+                                                className="peer w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-8 pb-4 pt-8 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white focus:ring-4 focus:ring-black/5"
                                             />
+                                            <label htmlFor="name" className="absolute left-8 top-6 text-[10px] font-black uppercase tracking-widest text-neutral-400 transition-all peer-focus:top-3 peer-focus:text-[8px] peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:text-[8px]">Full Name</label>
                                         </div>
-                                        <div className="space-y-3">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400 ml-1">Email Address</label>
+                                        <div className="relative">
                                             <input
                                                 type="email"
+                                                id="email"
                                                 value={formData.email}
                                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                placeholder="example@email.com"
+                                                placeholder=" "
                                                 required
-                                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-8 py-5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white focus:ring-4 focus:ring-black/5"
+                                                className="peer w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-8 pb-4 pt-8 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white focus:ring-4 focus:ring-black/5"
                                             />
+                                            <label htmlFor="email" className="absolute left-8 top-6 text-[10px] font-black uppercase tracking-widest text-neutral-400 transition-all peer-focus:top-3 peer-focus:text-[8px] peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:text-[8px]">Email Address</label>
                                         </div>
                                     </div>
 
-                                    <div className="space-y-3">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400 ml-1">What can we help you with?</label>
-                                        <div className="relative">
-                                            <select
-                                                value={formData.subject}
-                                                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                                                required
-                                                className="w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-8 py-5 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white appearance-none cursor-pointer"
-                                            >
-                                                <option value="">Select a topic</option>
-                                                <option value="membership">Elite Membership Program</option>
-                                                <option value="booking">Besopke Voyage Booking</option>
-                                                <option value="custom">Extreme Adventure Planning</option>
-                                                <option value="corporate">Corporate Private Charters</option>
-                                                <option value="partnership">Global Partner Relations</option>
-                                                <option value="other">General Inquiry</option>
-                                            </select>
-                                            <div className="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 text-neutral-400">
-                                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            </div>
+                                    <div className="relative">
+                                        <select
+                                            id="subject"
+                                            value={formData.subject}
+                                            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                                            required
+                                            className="peer w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-8 pb-4 pt-8 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white appearance-none cursor-pointer"
+                                        >
+                                            <option value="" disabled hidden></option>
+                                            <option value="membership">Elite Membership Program</option>
+                                            <option value="booking">Besopke Voyage Booking</option>
+                                            <option value="custom">Extreme Adventure Planning</option>
+                                            <option value="corporate">Corporate Private Charters</option>
+                                            <option value="partnership">Global Partner Relations</option>
+                                            <option value="other">General Inquiry</option>
+                                        </select>
+                                        <label htmlFor="subject" className={`absolute left-8 transition-all font-black uppercase tracking-widest text-neutral-400 pointer-events-none ${formData.subject ? 'top-3 text-[8px]' : 'top-6 text-[10px]'} peer-focus:top-3 peer-focus:text-[8px]`}>What can we help you with?</label>
+                                        <div className="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 text-neutral-400">
+                                            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                            </svg>
                                         </div>
                                     </div>
 
-                                    <div className="space-y-3">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400 ml-1">Tell us about your next Voyage</label>
+                                    <div className="relative">
                                         <textarea
+                                            id="message"
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            placeholder="Destinations, dates, or specific requirements..."
+                                            placeholder=" "
                                             rows={6}
                                             required
-                                            className="w-full rounded-3xl border border-neutral-100 bg-neutral-50 px-8 py-6 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white resize-none"
+                                            className="peer w-full rounded-3xl border border-neutral-100 bg-neutral-50 px-8 pb-6 pt-8 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white resize-none"
                                         />
+                                        <label htmlFor="message" className="absolute left-8 top-6 text-[10px] font-black uppercase tracking-widest text-neutral-400 transition-all peer-focus:top-4 peer-focus:text-[8px] peer-[:not(:placeholder-shown)]:top-4 peer-[:not(:placeholder-shown)]:text-[8px]">Tell us about your next Voyage</label>
                                     </div>
 
                                     <button
@@ -210,7 +212,7 @@ export default function ContactPage() {
                                             { city: 'Dubai', region: 'Middle East' },
                                             { city: 'Singapore', region: 'Southeast Asia' },
                                         ].map((office) => (
-                                            <div key={office.city} className="rounded-2xl border border-black/5 p-6 hover:bg-neutral-900 hover:text-white transition-all duration-300 cursor-pointer text-left group">
+                                            <div key={office.city} className="rounded-2xl border border-black/5 p-6 hover:bg-neutral-900 hover:text-white transition-all duration-300 cursor-pointer text-left group hover:-translate-y-1 hover:shadow-xl">
                                                 <p className="text-lg font-black tracking-tight">{office.city}</p>
                                                 <p className="mt-1 text-xs font-bold uppercase tracking-widest text-neutral-400 group-hover:text-white/60">{office.region}</p>
                                             </div>
@@ -227,9 +229,9 @@ export default function ContactPage() {
                                     />
                                     <div className="absolute inset-0 bg-neutral-900/10 group-hover:bg-transparent transition-all duration-500"></div>
                                     <div className="absolute bottom-8 left-8">
-                                        <div className="inline-flex items-center gap-3 rounded-full bg-white/95 backdrop-blur-md px-6 py-3 shadow-2xl">
+                                        <div className="inline-flex items-center gap-3 rounded-full bg-white/95 backdrop-blur-md px-6 py-3 shadow-2xl transition-transform duration-300 group-hover:scale-105 group-hover:bg-white">
                                             <span className="h-2 w-2 rounded-full bg-neutral-900 animate-pulse"></span>
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-900">London HQ — Explore Locaton</span>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-900">London HQ — Explore Location</span>
                                         </div>
                                     </div>
                                 </motion.div>

@@ -64,17 +64,17 @@ const Newsletter = () => {
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 ml-4">Email Address</label>
+                                <div className="relative">
                                     <input
                                         id="email"
                                         type="email"
                                         required
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="your@email.com"
-                                        className="w-full bg-neutral-800 border-none rounded-[24px] px-8 py-5 text-white placeholder:text-white/20 focus:ring-2 focus:ring-white/20 outline-none transition-all"
+                                        placeholder=" "
+                                        className="peer w-full bg-neutral-800 border-none rounded-[24px] px-8 pb-4 pt-8 text-white focus:ring-2 focus:ring-white/20 outline-none transition-all"
                                     />
+                                    <label htmlFor="email" className="absolute left-8 top-6 text-[10px] font-black uppercase tracking-[0.2em] text-white/40 transition-all peer-focus:top-3 peer-focus:text-[8px] peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:text-[8px] pointer-events-none">Email Address</label>
                                 </div>
                                 <button
                                     type="submit"
