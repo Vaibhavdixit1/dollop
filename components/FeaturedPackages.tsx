@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 
 const packages = [
     {
@@ -81,6 +81,18 @@ type FeaturedPackagesProps = {
 const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
+    const [selectedPkg, setSelectedPkg] = useState<typeof packages[0] | null>(null);
+
+    useEffect(() => {
+        if (selectedPkg !== null) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [selectedPkg]);
 
     const visiblePackages = limit ? packages.slice(0, limit) : packages;
     const ctaLabel = buttonLabel ?? (limit ? 'Show more' : 'View All Packages');
@@ -150,9 +162,12 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
 
                                 <div className="mt-10 pt-8 border-t border-white/10 flex items-center justify-between">
                                     <p className="text-xl md:text-2xl font-black text-white">{pkg.price}</p>
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-neutral-900 transition-transform group-hover:scale-110 cursor-pointer">
+                                    <button 
+                                        onClick={() => setSelectedPkg(pkg)}
+                                        className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-neutral-900 transition-transform group-hover:scale-110 cursor-pointer focus:outline-none"
+                                    >
                                         <span className="text-xl">→</span>
-                                    </div>
+                                    </button>
                                 </div>
                             </div>
                         </motion.div>
@@ -177,6 +192,87 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
                     </motion.div>
                 )}
             </div>
+
+            {/* Quick View Modal */}
+            <AnimatePresence>
+                {selectedPkg && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6"
+                        onClick={() => setSelectedPkg(null)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.95, y: 20, opacity: 0 }}
+                            animate={{ scale: 1, y: 0, opacity: 1 }}
+                            exit={{ scale: 0.95, y: 20, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-[32px] bg-neutral-900 shadow-2xl border border-white/10 flex flex-col md:flex-row"
+                        >
+                            <button
+                                onClick={() => setSelectedPkg(null)}
+                                className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-colors hover:bg-black/80 focus:outline-none"
+                            >
+                                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+
+                            <div className="relative h-64 md:h-auto md:w-[45%] shrink-0">
+                                <img
+                                    src={selectedPkg.image}
+                                    alt={selectedPkg.title}
+                                    className="absolute inset-0 h-full w-full object-cover grayscale"
+                                />
+                                <div className="absolute top-6 left-6 flex items-center gap-2 rounded-full bg-black/50 px-4 py-2 backdrop-blur-md border border-white/10">
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-white">{selectedPkg.duration}</span>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col p-8 md:p-12 md:w-[55%]">
+                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">{selectedPkg.spots}</span>
+                                <h3 className="mt-3 text-2xl sm:text-3xl font-black tracking-tight text-white uppercase leading-tight">
+                                    {selectedPkg.title}
+                                </h3>
+                                <p className="mt-4 text-sm sm:text-base font-medium leading-relaxed text-white/60">
+                                    {selectedPkg.description}
+                                </p>
+                                
+                                <div className="mt-6 mb-6 flex-grow">
+                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-white/80 mb-4">Highlights</h4>
+                                    <ul className="space-y-3">
+                                        {[
+                                            'Private guided expeditions',
+                                            'Luxury accommodations',
+                                            'Gourmet dining experiences',
+                                            'All-inclusive transport'
+                                        ].map((highlight, idx) => (
+                                            <li key={idx} className="flex items-center gap-3">
+                                                <span className="h-1 w-1 rounded-full bg-white text-white/50"></span>
+                                                <span className="text-xs sm:text-sm font-medium text-white/50">{highlight}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div className="pt-6 border-t border-white/10">
+                                    <p className="text-xs font-bold text-white/40 uppercase tracking-wider mb-2">Starting from</p>
+                                    <div className="flex items-center justify-between">
+                                        <p className="text-2xl sm:text-3xl font-black text-white">{selectedPkg.price}</p>
+                                        <Link
+                                            href={`/packages/${selectedPkg.id}`}
+                                            className="rounded-full bg-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-black uppercase tracking-[0.2em] text-neutral-900 transition-all hover:bg-neutral-200 active:scale-95 text-center"
+                                        >
+                                            Book Now
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };

@@ -30,6 +30,20 @@ const testimonials = [
         role: "Tech Executive",
         avatar: "https://i.pravatar.cc/150?u=james",
         rating: 4
+    },
+    {
+        quote: "An unparalleled journey. Their network of private chefs and exclusive venues exceeded all expectations.",
+        author: "Sophie Laurent",
+        role: "Restaurateur",
+        avatar: "https://i.pravatar.cc/150?u=sophie",
+        rating: 5
+    },
+    {
+        quote: "I've travelled the globe, but Voyage managed to surprise me with unseen locations and immaculate service.",
+        author: "David Kim",
+        role: "Entrepreneur",
+        avatar: "https://i.pravatar.cc/150?u=david",
+        rating: 5
     }
 ];
 
@@ -48,7 +62,8 @@ const Testimonials = () => {
                     <h2 className="mt-6 md:mt-8 text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter text-neutral-900 uppercase">SHARED MEMORIES</h2>
                 </motion.div>
 
-                <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                {/* hide-scrollbar class can be added in global CSS or just use standard tailwind classes */}
+                <div className="mt-16 md:mt-24 flex overflow-x-auto pb-12 snap-x snap-mandatory gap-6 md:gap-10 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                     {testimonials.map((t, i) => (
                         <motion.div 
                             key={i} 
@@ -56,7 +71,7 @@ const Testimonials = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: '-50px' }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
-                            className="relative rounded-[32px] md:rounded-[48px] bg-white p-8 md:p-12 shadow-xl transition-all hover:scale-[1.01] flex flex-col justify-between"
+                            className="relative min-w-[85vw] md:min-w-[600px] snap-center rounded-[32px] md:rounded-[48px] bg-white border border-black/5 p-8 md:p-12 shadow-xl transition-all hover:scale-[1.02] hover:shadow-2xl flex flex-col justify-between shrink-0 cursor-grab active:cursor-grabbing"
                         >
                             <div>
                                 <div className="flex gap-1 mb-8">
