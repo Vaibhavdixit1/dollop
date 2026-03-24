@@ -137,13 +137,18 @@ const DestinationGrid = () => {
             {/* Quick View Modal */}
             <AnimatePresence>
                 {selectedDest && (
-                    <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4">
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[2000] flex items-center justify-center p-4 transition-all"
+                    >
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setSelectedDest(null)}
-                            className="absolute inset-0 bg-neutral-900/40 backdrop-blur-sm"
+                            className="absolute inset-0 bg-neutral-900/40 backdrop-blur-sm transition-all"
                         />
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -209,7 +214,7 @@ const DestinationGrid = () => {
                                 </div>
                             </div>
                         </motion.div>
-                    </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </section>
