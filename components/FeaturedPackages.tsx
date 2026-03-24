@@ -186,7 +186,7 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
                             href="/packages"
                             className="group flex cursor-pointer items-center gap-6 rounded-full border border-white/10 bg-white/5 px-12 py-5 text-sm font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-white hover:text-neutral-900 active:scale-95"
                         >
-                            {buttonLabel || 'Show more experiments'}
+                            {buttonLabel || 'Show more packages'}
                             <span className="text-xl transition-transform group-hover:translate-x-2">→</span>
                         </Link>
                     </motion.div>
@@ -200,7 +200,7 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6"
+                        className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6"
                         onClick={() => setSelectedPkg(null)}
                     >
                         <motion.div
