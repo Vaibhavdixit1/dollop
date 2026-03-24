@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 const categories = [
-    { title: 'TROPICAL PARADISE', count: '42 Locations', image: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=800' },
-    { title: 'ARCTIC ESCAPES', count: '18 Locations', image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800' },
-    { title: 'URBAN LUXURY', count: '31 Locations', image: 'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&q=80&w=800' },
-    { title: 'WILD SAFARI', count: '12 Locations', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800' },
+    { title: 'SECLUDED ISLANDS', count: 'Strictly Private Access', image: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=800' },
+    { title: 'GLACIAL EXPEDITIONS', count: 'Helicopter insertions', image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800' },
+    { title: 'URBAN SANCTUARIES', count: 'Penthouse collections', image: 'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&q=80&w=800' },
+    { title: 'SAVANNAH ESTATES', count: 'Unlisted reserves', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800' },
 ];
 
 const RegionCategories = () => {
@@ -19,8 +19,8 @@ const RegionCategories = () => {
                     transition={{ duration: 0.6 }}
                     className="flex flex-col items-center text-center"
                 >
-                    <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">Explore by Type</span>
-                    <h2 className="mt-6 md:mt-8 text-4xl sm:text-6xl font-black tracking-tighter text-neutral-900 uppercase">WHERE DO YOU <br /> BELONG?</h2>
+                    <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">Curated Biomes</span>
+                    <h2 className="mt-6 md:mt-8 text-4xl sm:text-6xl font-black tracking-tighter text-neutral-900 uppercase">ENVIRONMENTS <br /> OF EXCLUSION</h2>
                 </motion.div>
 
                 <div className="mt-16 md:mt-24 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

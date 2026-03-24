@@ -6,27 +6,27 @@ import { motion, useInView } from 'framer-motion';
 const steps = [
     {
         step: '01',
-        title: 'TELL US YOUR DREAM',
-        description: 'Share your vision — from a secluded tropical escape to an alpine adventure. Our curators listen to every detail.',
-        detail: 'Personal consultation',
+        title: 'INITIAL DOSSIER',
+        description: 'We conduct an in-depth profiling of your travel history, architectural preferences, and dietary requirements to establish your bespoke traveler identity.',
+        detail: 'Private profiling',
     },
     {
         step: '02',
-        title: 'WE CURATE THE PERFECT PLAN',
-        description: 'Our expert team handcrafts a bespoke itinerary with curated stays, private transfers, and exclusive experiences.',
-        detail: 'Custom itinerary',
+        title: 'ARCHITECTING THE PATH',
+        description: 'Our global intelligence network secures off-market estates, private airstrips, and heavily restricted nature reserves.',
+        detail: 'Asset securing',
     },
     {
         step: '03',
-        title: 'PACK AND DEPART',
-        description: 'Everything is handled — from visa support to airport concierge. Just arrive and begin your story.',
-        detail: 'Zero friction',
+        title: 'THE DISPATCH',
+        description: 'You receive a classified itinerary brief. From here, our logistics team manages airspace regulations, ground security, and staff vetting.',
+        detail: 'Pre-flight prep',
     },
     {
         step: '04',
-        title: 'LIVE THE EXPERIENCE',
-        description: 'With 24/7 concierge support and local insiders, every moment is elevated. Create memories that last forever.',
-        detail: 'Full support',
+        title: 'COMPLETE IMMERSION',
+        description: 'Upon arrival, the world is yours. Our shadow-concierge team works invisibly in the background to ensure absolute perfection.',
+        detail: 'Shadow support',
     },
 ];
 
@@ -45,9 +45,9 @@ const HowItWorks = () => {
                         transition={{ duration: 0.6 }}
                         className="max-w-xl"
                     >
-                        <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">The Process</span>
+                        <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">Our Protocol</span>
                         <h2 className="mt-6 md:mt-8 text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter text-neutral-900 uppercase leading-none">
-                            HOW VOYAGE <br /> WORKS
+                            THE VOYAGE <br /> MANIFESTO
                         </h2>
                     </motion.div>
                     <motion.p 
@@ -57,7 +57,7 @@ const HowItWorks = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="max-w-sm text-lg md:text-xl font-medium text-neutral-600 leading-relaxed"
                     >
-                        From dream to departure in four simple steps. We handle the complexity so you can focus on the experience.
+                        Precision logistics masked as effortless magic. Our operation runs on four highly guarded principles.
                     </motion.p>
                 </div>
 

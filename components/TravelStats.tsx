@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const stats = [
-    { value: 150, suffix: '+', label: 'Handpicked Destinations', description: 'Across 6 continents' },
-    { value: 25, suffix: 'k+', label: 'Travelers Transformed', description: 'And counting every day' },
-    { value: 98, suffix: '%', label: 'Satisfaction Rate', description: 'Based on post-trip surveys' },
-    { value: 12, suffix: '+', label: 'Years of Expertise', description: 'Crafting perfect journeys' },
+    { value: 85, suffix: '+', label: 'Vetted Private Estates', description: 'Off-market properties' },
+    { value: 99, suffix: '%', label: 'Discretion Guarantee', description: 'Absolute client anonymity' },
+    { value: 24, suffix: '/7', label: 'Shadow Concierge', description: 'Global rapid response' },
+    { value: 15, suffix: '+', label: 'Years of Intelligence', description: 'Unrivaled global network' },
 ];
 
 function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
@@ -55,9 +55,9 @@ const TravelStats = () => {
 
             <div ref={containerRef} className="relative z-10 mx-auto max-w-7xl">
                 <div className="text-center mb-16 md:mb-24">
-                    <span className="text-[10px] sm:text-xs font-black tracking-[0.5em] text-white/30 uppercase">Our Impact</span>
+                    <span className="text-[10px] sm:text-xs font-black tracking-[0.5em] text-white/30 uppercase">The Infrastructure</span>
                     <h2 className="mt-4 md:mt-6 text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter text-white uppercase leading-none">
-                        NUMBERS THAT <br /> SPEAK VOLUMES
+                        UNMATCHED <br /> CAPABILITY
                     </h2>
                 </div>
 

@@ -3,16 +3,16 @@
 import { motion } from 'framer-motion';
 const values = [
     {
-        title: 'UNRIVALED CURATION',
-        description: 'We don’t just find hotels; we discover experiences that stay with you forever. Every spot is vetted for soul, service, and style.',
+        title: 'ARCHITECTURAL INTEGRITY',
+        description: 'We do not compromise on aesthetics. Every property we represent is vetted for its architectural significance, interior mastery, and harmony with its environment.',
     },
     {
-        title: 'RADICAL PRIVACY',
-        description: 'For our members, anonymity is the ultimate luxury. We specialize in off-grid escapes and private transport solutions.',
+        title: 'TOTAL ANONYMITY',
+        description: 'For our elite client roster, privacy is non-negotiable. We execute deeply confidential itineraries, utilizing ghost flights and secure, off-the-grid domains.',
     },
     {
-        title: 'CONSCIOUS TRAVEL',
-        description: 'Luxury shouldn’t cost the earth. We partner with eco-certified properties and support local heritage conservation.',
+        title: 'ECOLOGICAL STEWARDSHIP',
+        description: 'True luxury safeguards next generations. A mandatory percentage of our proceeds funds marine preservation, aggressive wildlife protection, and local artisan heritage.',
     },
 ];
 
@@ -41,7 +41,7 @@ const Philosophy = () => {
                         className="lg:w-1/2"
                     >
                         <p className="text-xl md:text-2xl font-bold leading-tight text-neutral-900 tracking-tight">
-                            We believe that the best journeys aren&apos;t measured in miles, but in the depth of the moments they create. We exist to facilitate those moments.
+                            We reject mass tourism and formulaic vacations. The modern traveler requires scarcity, authenticity, and profound isolation away from the crowds.
                         </p>
                     </motion.div>
                 </div>

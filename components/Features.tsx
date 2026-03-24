@@ -3,23 +3,23 @@
 import { motion } from 'framer-motion';
 const features = [
     {
-        title: 'CURATED LUXURY',
-        description: 'Every destination and hotel is hand-picked by our travel experts for its unique design and exceptional service.',
+        title: 'VERIFIED EXCELLENCE',
+        description: 'Our scouts personally inspect and certify every property, from private island villas to remote alpine chalets, ensuring an uncompromising standard of luxury.',
         icon: '01'
     },
     {
-        title: 'PRIVATE ACCESS',
-        description: 'Unlock experiences that aren’t available to the general public, from private museum tours to secret beach dinners.',
+        title: 'UNLISTED ITINERARIES',
+        description: 'Gain access to heavily guarded local secrets, historical estates closed to the public, and dining experiences absent from any guidebook.',
         icon: '02'
     },
     {
-        title: 'GLOBAL CONCIERGE',
-        description: 'Our 24/7 support team ensures your journey is seamless, handling everything from transport to last-minute bookings.',
+        title: 'DISCREET CONCIERGE',
+        description: 'A devoted lifestyle manager is assigned to your journey, anticipating your needs and managing complex logistics with absolute anonymity and zero friction.',
         icon: '03'
     },
     {
-        title: 'BESPOKE DESIGN',
-        description: 'We don’t do cookie-cutter. Every itinerary is tailored to your personal preferences and travel style.',
+        title: 'PRIVATE AVIATION',
+        description: 'Bypass commercial routing entirely. We orchestrate direct helicopter transfers, private jet charters, and seamless tarmac-to-estate arrivals.',
         icon: '04'
     }
 ];
@@ -35,12 +35,12 @@ const Features = () => {
                         viewport={{ once: true, margin: '-50px' }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">The Voyage Standard</span>
+                        <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">The Expedition Standard</span>
                         <h2 className="mt-6 md:mt-8 text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter text-neutral-900 uppercase leading-none">
-                            REDEFINING <br /> THE WAY <br /> YOU TRAVEL
+                            ELEVATING <br /> HOW YOU <br /> DISCOVER
                         </h2>
                         <p className="mt-8 md:mt-12 max-w-md text-lg md:text-xl font-medium leading-relaxed text-neutral-600">
-                            We believe that travel is an art form. Our mission is to provide you with the canvas and the tools to create your most memorable masterpieces.
+                            We view global exploration not just as a getaway, but as an investment into your legacy. Time is your ultimate luxury; we ensure not a second is wasted.
                         </p>
                         <div className="mt-12 md:mt-16 aspect-[16/9] lg:aspect-square max-w-sm md:max-w-md overflow-hidden rounded-[32px] md:rounded-[48px]">
                             <img

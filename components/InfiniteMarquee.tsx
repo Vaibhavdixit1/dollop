@@ -1,7 +1,7 @@
 'use client';
 
 const InfiniteMarquee = () => {
-    const text = 'EXPLORE · DISCOVER · EXPERIENCE · VOYAGE · LUXURY · CURATED · BESPOKE · TRAVEL · ADVENTURE · ESCAPE · ';
+    const text = 'PRIVATE AVIATION · DISCREET ESTATES · YACHT CHARTERS · ISOLATION · ARCHITECTURAL EXCELLENCE · ZERO FRICTION · EXTREME LUXURY · ';
     
     return (
         <section className="bg-neutral-900 py-6 md:py-8 overflow-hidden border-y border-white/5 select-none">
