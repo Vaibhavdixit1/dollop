@@ -152,8 +152,13 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
                             </div>
 
                             <div className="p-8 md:p-12">
-                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">{pkg.spots}</span>
-                                <h3 className="mt-4 text-2xl md:text-3xl font-black tracking-tight text-white uppercase leading-tight group-hover:underline underline-offset-8 transition-all">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full border ${pkg.spots.includes('Waitlist') ? 'bg-amber-500/10 border-amber-500/20 text-amber-500' : 'bg-white/10 border-white/10 text-white/60'}`}>
+                                        {pkg.spots.includes('Waitlist') ? 'Waitlist' : 'Limited'}
+                                    </span>
+                                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">{pkg.spots}</span>
+                                </div>
+                                <h3 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase leading-tight group-hover:underline underline-offset-8 transition-all">
                                     {pkg.title}
                                 </h3>
                                 <p className="mt-6 text-base font-medium leading-relaxed text-white/60 line-clamp-2">
@@ -231,8 +236,13 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
                             </div>
 
                             <div className="flex flex-col p-8 md:p-12 md:w-[55%]">
-                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">{selectedPkg.spots}</span>
-                                <h3 className="mt-3 text-2xl sm:text-3xl font-black tracking-tight text-white uppercase leading-tight">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full border ${selectedPkg.spots.includes('Waitlist') ? 'bg-amber-500/10 border-amber-500/20 text-amber-500' : 'bg-white/10 border-white/10 text-white/60'}`}>
+                                        {selectedPkg.spots.includes('Waitlist') ? 'Waitlist' : 'Limited'}
+                                    </span>
+                                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">{selectedPkg.spots}</span>
+                                </div>
+                                <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase leading-tight">
                                     {selectedPkg.title}
                                 </h3>
                                 <p className="mt-4 text-sm sm:text-base font-medium leading-relaxed text-white/60">

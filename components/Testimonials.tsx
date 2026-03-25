@@ -63,7 +63,8 @@ const Testimonials = () => {
                 </motion.div>
 
                 {/* hide-scrollbar class can be added in global CSS or just use standard tailwind classes */}
-                <div className="mt-16 md:mt-24 flex overflow-x-auto pb-12 snap-x snap-mandatory gap-6 md:gap-10 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                <div className="relative mt-16 md:mt-24">
+                    <div className="flex overflow-x-auto pb-12 snap-x snap-mandatory gap-6 md:gap-10 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                     {testimonials.map((t, i) => (
                         <motion.div 
                             key={i} 
@@ -102,6 +103,25 @@ const Testimonials = () => {
                             </div>
                         </motion.div>
                     ))}
+                    </div>
+                    
+                    {/* Progress Indicator */}
+                    <div className="mt-8 flex justify-center gap-2">
+                        {testimonials.map((_, i) => (
+                            <div 
+                                key={i} 
+                                className="h-1 w-8 rounded-full bg-neutral-900/10 overflow-hidden"
+                            >
+                                <motion.div 
+                                    initial={{ x: '-100%' }}
+                                    whileInView={{ x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, delay: i * 0.1 }}
+                                    className="h-full w-full bg-neutral-900/40"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

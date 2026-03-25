@@ -15,6 +15,17 @@ const Footer = () => {
                         <p className="mt-6 md:mt-8 max-w-sm text-base md:text-lg font-medium leading-relaxed text-neutral-600">
                             Elevating travel experiences with curated escapes and seamless bookings. Discover the world&apos;s most exclusive destinations with VOYAGE.
                         </p>
+                        <div className="mt-8 flex gap-6">
+                            {['Instagram', 'Twitter', 'LinkedIn'].map((platform) => (
+                                <Link
+                                    key={platform}
+                                    href="#"
+                                    className="text-[10px] font-black uppercase tracking-widest text-neutral-400 transition-colors hover:text-neutral-900"
+                                >
+                                    {platform}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-2">
@@ -40,10 +51,17 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="mt-16 md:mt-24 border-t border-black/5 pt-10 md:pt-12 text-center md:text-left">
+                <div className="mt-16 md:mt-24 border-t border-black/5 pt-10 md:pt-12 flex flex-col items-center justify-between gap-6 md:flex-row">
                     <p className="text-[9px] md:text-xs font-bold uppercase tracking-widest text-neutral-400">
                         © {new Date().getFullYear()} VOYAGE TRAVEL INC. ALL RIGHTS RESERVED.
                     </p>
+                    <div className="flex gap-8">
+                        {['Press', 'Careers', 'Cookie Policy'].map((item) => (
+                            <Link key={item} href="#" className="text-[9px] md:text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-neutral-900 transition-colors">
+                                {item}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
         </footer>

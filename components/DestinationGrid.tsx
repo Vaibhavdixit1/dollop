@@ -12,7 +12,9 @@ const destinations = [
         price: '$2,400', 
         rating: 4.9, 
         image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800',
-        description: 'Experience the ultimate overwater luxury in the heart of French Polynesia. Crystal clear lagoons and emerald-green peaks await.'
+        description: 'Experience the ultimate overwater luxury in the heart of French Polynesia. Crystal clear lagoons and emerald-green peaks await.',
+        bestTime: 'May to October',
+        highlights: ['Private Boat Tour', 'Snorkeling with Manta Rays', 'Underwater Dining'],
     },
     { 
         id: 2, 
@@ -21,7 +23,9 @@ const destinations = [
         price: '$1,850', 
         rating: 4.8, 
         image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800',
-        description: 'Pristine slopes, cozy chalets, and breathtaking mountain vistas. Perfect for both adventure seekers and those looking for mountain peace.'
+        description: 'Pristine slopes, cozy chalets, and breathtaking mountain vistas. Perfect for both adventure seekers and those looking for mountain peace.',
+        bestTime: 'December to March',
+        highlights: ['Glacier Express Ride', 'Luxury Spas', 'Off-piste Skiing'],
     },
     { 
         id: 3, 
@@ -30,7 +34,9 @@ const destinations = [
         price: '$1,200', 
         rating: 4.7, 
         image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&q=80&w=800',
-        description: 'Iconic blue-domed churches and white-washed buildings overlooking the caldera. Famous for the world\'s most beautiful sunsets.'
+        description: 'Iconic blue-domed churches and white-washed buildings overlooking the caldera. Famous for the world\'s most beautiful sunsets.',
+        bestTime: 'September or June',
+        highlights: ['Private Yacht Sunset Cruise', 'Wine Tasting', 'Oia Village Walk'],
     },
     { 
         id: 4, 
@@ -39,7 +45,9 @@ const destinations = [
         price: '$950', 
         rating: 4.9, 
         image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800',
-        description: 'A city where tradition meets modernity. Explore thousand-year-old temples, tranquil Zen gardens, and historic Geisha districts.'
+        description: 'A city where tradition meets modernity. Explore thousand-year-old temples, tranquil Zen gardens, and historic Geisha districts.',
+        bestTime: 'April or November',
+        highlights: ['Zen Gardens', 'Traditional Tea Ceremony', 'Historic Arashiyama'],
     },
 ];
 
@@ -195,6 +203,18 @@ const DestinationGrid = () => {
                                             <div>
                                                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400">Travel Style</p>
                                                 <p className="mt-2 text-xl font-black text-neutral-900">Luxury Premium</p>
+                                            </div>
+                                            <div>
+                                                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400">Best time to visit</p>
+                                                <p className="mt-2 text-xl font-black text-neutral-900">{selectedDest.bestTime}</p>
+                                            </div>
+                                            <div>
+                                                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400">Exclusive highlights</p>
+                                                <div className="mt-2 flex flex-wrap gap-2">
+                                                    {selectedDest.highlights?.map((h, i) => (
+                                                        <span key={i} className="text-xs font-bold text-neutral-500 bg-neutral-100 px-3 py-1 rounded-full uppercase tracking-tighter">{h}</span>
+                                                    ))}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
