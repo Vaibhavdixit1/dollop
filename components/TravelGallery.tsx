@@ -8,68 +8,87 @@ const galleryImages = [
         src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1200',
         alt: 'Luxury pool overlooking mountains',
         span: 'row-span-2',
+        category: 'Alpine',
     },
     {
         src: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80&w=1200',
         alt: 'Overwater bungalow at sunset',
         span: '',
+        category: 'Ocean',
     },
     {
         src: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&q=80&w=1200',
         alt: 'Luxury hotel lobby',
         span: '',
+        category: 'Modern',
     },
     {
         src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&q=80&w=1200',
         alt: 'Boutique hotel exterior',
         span: 'row-span-2',
+        category: 'Modern',
     },
     {
         src: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&q=80&w=1200',
         alt: 'Mountain retreat',
         span: '',
+        category: 'Retreat',
     },
     {
         src: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=1200',
         alt: 'Spa and wellness center',
         span: '',
+        category: 'Retreat',
     },
     {
         src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&q=80&w=1200',
         alt: 'Desert adventure landscape',
         span: '',
+        category: 'Retreat',
     },
     {
         src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1200',
         alt: 'Mountain hiking adventure',
         span: 'row-span-2',
+        category: 'Alpine',
     },
     {
         src: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1200',
         alt: 'Road trip through mountains',
         span: '',
+        category: 'Alpine',
     },
     {
         src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200',
         alt: 'Cliffside tropical beach',
         span: '',
+        category: 'Ocean',
     },
     {
         src: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=1200',
         alt: 'Desert sunset dunes',
         span: '',
+        category: 'Modern',
     },
     {
         src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200',
         alt: 'Ocean tropical paradise',
         span: '',
+        category: 'Ocean',
     },
 ];
+
+const categories = ['All', 'Alpine', 'Ocean', 'Modern', 'Retreat'];
 
 const TravelGallery = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-80px' });
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
+    const [activeCategory, setActiveCategory] = useState('All');
+
+    const filteredImages = activeCategory === 'All' 
+        ? galleryImages 
+        : galleryImages.filter(img => img.category === activeCategory);
 
     // Lock scroll when lightbox is open
     useEffect(() => {
@@ -119,16 +138,35 @@ const TravelGallery = () => {
                     </motion.p>
                 </div>
 
-                <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 auto-rows-[200px] md:auto-rows-[250px] gap-4 md:gap-6">
-                    {galleryImages.map((image, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                            transition={{ duration: 0.6, delay: i * 0.1 }}
-                            onClick={() => setSelectedImage(i)}
-                            className={`group relative overflow-hidden rounded-[24px] md:rounded-[32px] cursor-pointer ${image.span} shadow-lg transition-all hover:shadow-2xl active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-black/10`}
+                <div className="mb-12 flex flex-wrap gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                    {categories.map((cat) => (
+                        <button
+                            key={cat}
+                            onClick={() => setActiveCategory(cat)}
+                            className={`whitespace-nowrap rounded-full px-8 py-3 text-[10px] font-black uppercase tracking-widest transition-all ${
+                                activeCategory === cat 
+                                    ? 'bg-neutral-900 text-white shadow-xl scale-105' 
+                                    : 'bg-neutral-100 text-neutral-400 hover:bg-neutral-200'
+                            }`}
                         >
+                            {cat}
+                        </button>
+                    ))}
+                </div>
+
+                <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 auto-rows-[200px] md:auto-rows-[250px] gap-4 md:gap-6">
+                    <AnimatePresence mode='popLayout'>
+                        {filteredImages.map((image, i) => (
+                            <motion.div
+                                key={image.src}
+                                layout
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                transition={{ duration: 0.5 }}
+                                onClick={() => setSelectedImage(galleryImages.indexOf(image))}
+                                className={`group relative overflow-hidden rounded-[24px] md:rounded-[32px] cursor-pointer ${image.span} shadow-lg transition-all hover:shadow-2xl active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-black/10`}
+                            >
                             <img
                                 src={image.src}
                                 alt={image.alt}
@@ -146,6 +184,7 @@ const TravelGallery = () => {
                             </div>
                         </motion.div>
                     ))}
+                    </AnimatePresence>
                 </div>
             </div>
 
