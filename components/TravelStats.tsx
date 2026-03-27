@@ -83,6 +83,16 @@ const TravelStats = () => {
                             <p className="mt-2 text-[10px] sm:text-xs font-medium text-white/30 tracking-wider uppercase">
                                 {stat.description}
                             </p>
+                            
+                            {/* Visual Progress Bar */}
+                            <div className="mt-8 h-1 w-20 bg-white/5 rounded-full overflow-hidden">
+                                <motion.div
+                                    initial={{ x: '-100%' }}
+                                    animate={isInView ? { x: 0 } : {}}
+                                    transition={{ duration: 1.5, delay: i * 0.2, ease: "easeOut" }}
+                                    className="h-full w-full bg-linear-to-r from-transparent via-white/40 to-transparent"
+                                />
+                            </div>
                         </motion.div>
                     ))}
                 </div>
