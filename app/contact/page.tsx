@@ -13,6 +13,8 @@ export default function ContactPage() {
         email: '',
         subject: '',
         message: '',
+        preferredContact: 'email',
+        season: '',
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -20,7 +22,7 @@ export default function ContactPage() {
         e.preventDefault();
         setIsSubmitted(true);
         setTimeout(() => setIsSubmitted(false), 4000);
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', subject: '', message: '', preferredContact: 'email', season: '' });
     };
 
     const containerVariants = {
@@ -131,6 +133,47 @@ export default function ContactPage() {
                                             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                                             </svg>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                                        <div className="relative">
+                                            <select
+                                                id="preferredContact"
+                                                value={formData.preferredContact}
+                                                onChange={(e) => setFormData({ ...formData, preferredContact: e.target.value })}
+                                                className="peer w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-8 pb-4 pt-8 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white appearance-none cursor-pointer"
+                                            >
+                                                <option value="email">Email</option>
+                                                <option value="phone">Phone Call</option>
+                                                <option value="whatsapp">WhatsApp</option>
+                                            </select>
+                                            <label htmlFor="preferredContact" className="absolute left-8 top-3 text-[8px] font-black uppercase tracking-widest text-neutral-400">Preferred Contact</label>
+                                            <div className="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 text-neutral-400">
+                                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div className="relative">
+                                            <select
+                                                id="season"
+                                                value={formData.season}
+                                                onChange={(e) => setFormData({ ...formData, season: e.target.value })}
+                                                className="peer w-full rounded-2xl border border-neutral-100 bg-neutral-50 px-8 pb-4 pt-8 text-base font-bold text-neutral-900 outline-none transition-all focus:border-neutral-900 focus:bg-white appearance-none cursor-pointer"
+                                            >
+                                                <option value="" disabled hidden></option>
+                                                <option value="spring">Spring 2026</option>
+                                                <option value="summer">Summer 2026</option>
+                                                <option value="autumn">Autumn 2026</option>
+                                                <option value="winter">Winter 2026</option>
+                                            </select>
+                                            <label htmlFor="season" className={`absolute left-8 transition-all font-black uppercase tracking-widest text-neutral-400 pointer-events-none ${formData.season ? 'top-3 text-[8px]' : 'top-6 text-[10px]'} peer-focus:top-3 peer-focus:text-[8px]`}>Preferred Season</label>
+                                            <div className="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 text-neutral-400">
+                                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
 
