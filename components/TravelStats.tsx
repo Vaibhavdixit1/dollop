@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useSpring, useTransform } from 'framer-motion';
 
 const stats = [
     { value: 85, suffix: '+', label: 'Vetted Private Estates', description: 'Off-market properties' },
@@ -36,7 +36,7 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
     }, [isInView, target]);
 
     return (
-        <span ref={ref}>
+        <span ref={ref} className="tabular-nums">
             {count}{suffix}
         </span>
     );
@@ -47,51 +47,56 @@ const TravelStats = () => {
     const isInView = useInView(containerRef, { once: true, margin: '-50px' });
 
     return (
-        <section className="relative bg-neutral-900 py-24 md:py-32 px-4 sm:px-6 lg:px-12 overflow-hidden">
-            {/* Subtle texture overlays */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.03)_0%,transparent_60%)]"></div>
-            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent"></div>
+        <section className="relative bg-neutral-950 py-32 md:py-48 px-4 sm:px-6 lg:px-12 overflow-hidden">
+            {/* Architectural Background */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,transparent_70%)]"></div>
+            <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
 
             <div ref={containerRef} className="relative z-10 mx-auto max-w-7xl">
-                <div className="text-center mb-16 md:mb-24">
-                    <span className="text-[10px] sm:text-xs font-black tracking-[0.5em] text-white/30 uppercase">The Infrastructure</span>
-                    <h2 className="mt-4 md:mt-6 text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter text-white uppercase leading-none">
-                        UNMATCHED <br /> CAPABILITY
-                    </h2>
+                <div className="flex flex-col items-center justify-center text-center mb-24 md:mb-32">
+                        <motion.span 
+                        initial={{ opacity: 0, letterSpacing: "0.1em" }}
+                        whileInView={{ opacity: 1, letterSpacing: "0.5em" }}
+                        transition={{ duration: 1 }}
+                        className="text-[10px] sm:text-xs font-black tracking-[0.5em] text-white/40 uppercase"
+                    >
+                        The Infrastructure
+                    </motion.span>
+                    <div className="overflow-hidden mt-6">
+                        <motion.h2 
+                            initial={{ y: "100%" }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                            className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9]"
+                        >
+                            UNMATCHED <br /> CAPABILITY
+                        </motion.h2>
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-8 md:gap-0 lg:grid-cols-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-[40px] overflow-hidden border border-white/10">
                     {stats.map((stat, i) => (
                         <motion.div
                             key={stat.label}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: i * 0.15 }}
-                            className="relative flex flex-col items-center text-center px-4 md:px-8"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: i * 0.1 }}
+                            className="group relative bg-neutral-950 p-12 md:p-16 flex flex-col items-center text-center hover:bg-neutral-900 transition-colors duration-500"
                         >
-                            {/* Divider between stats on desktop */}
-                            {i > 0 && (
-                                <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 h-20 w-px bg-white/10"></div>
-                            )}
-                            <span className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter text-white">
+                            <span className="text-6xl md:text-8xl font-black tracking-tighter text-white">
                                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                             </span>
-                            <h3 className="mt-4 md:mt-6 text-xs sm:text-sm font-black uppercase tracking-[0.2em] text-white/60">
-                                {stat.label}
-                            </h3>
-                            <p className="mt-2 text-[10px] sm:text-xs font-medium text-white/30 tracking-wider uppercase">
-                                {stat.description}
-                            </p>
-                            
-                            {/* Visual Progress Bar */}
-                            <div className="mt-8 h-1 w-20 bg-white/5 rounded-full overflow-hidden">
-                                <motion.div
-                                    initial={{ x: '-100%' }}
-                                    animate={isInView ? { x: 0 } : {}}
-                                    transition={{ duration: 1.5, delay: i * 0.2, ease: "easeOut" }}
-                                    className="h-full w-full bg-linear-to-r from-transparent via-white/40 to-transparent"
-                                />
+                            <div className="mt-8 flex flex-col items-center gap-4">
+                                <h3 className="text-xs font-black uppercase tracking-[0.3em] text-white/80 group-hover:text-white transition-colors">
+                                    {stat.label}
+                                </h3>
+                                <div className="h-px w-8 bg-white/20 group-hover:w-16 transition-all duration-500"></div>
+                                <p className="text-[10px] font-bold text-white/30 tracking-widest uppercase">
+                                    {stat.description}
+                                </p>
                             </div>
                         </motion.div>
                     ))}

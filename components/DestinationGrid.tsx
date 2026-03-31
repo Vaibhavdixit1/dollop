@@ -105,7 +105,12 @@ const DestinationGrid = () => {
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             onClick={() => setSelectedDest(dest)}
-                            className="group relative flex flex-col overflow-hidden rounded-[32px] md:rounded-[40px] border border-black/5 bg-white transition-all hover:-translate-y-2 hover:shadow-xl cursor-pointer"
+                            whileHover={{ 
+                                y: -10,
+                                scale: 1.02,
+                                transition: { duration: 0.3, ease: "easeOut" }
+                            }}
+                            className="group relative flex flex-col overflow-hidden rounded-[32px] md:rounded-[40px] border border-black/5 bg-white shadow-sm hover:shadow-2xl cursor-pointer transition-all"
                         >
                             <div className="relative aspect-4/5 overflow-hidden">
                                 <img
