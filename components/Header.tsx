@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
+import Magnetic from './Magnetic';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,9 +94,14 @@ const Header = () => {
                 </nav>
 
                 <div className="flex items-center gap-4 relative z-[1010]">
-                    <Link href="/signup" className="hidden cursor-pointer rounded-full bg-neutral-900 px-8 py-3 text-[10px] font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-neutral-800 active:scale-95 sm:block shadow-lg">
-                        Book Now
-                    </Link>
+                    <Magnetic>
+                        <Link 
+                            href="/signup" 
+                            className="hidden cursor-pointer rounded-full bg-neutral-900 px-8 py-3 text-[10px] font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-neutral-800 active:scale-95 sm:block shadow-lg"
+                        >
+                            Book Now
+                        </Link>
+                    </Magnetic>
 
                     <button
                         onClick={toggleMenu}

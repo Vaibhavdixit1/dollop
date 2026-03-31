@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 import ScrollToTop from "@/components/ScrollToTop";
+import CustomCursor from "@/components/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -27,8 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-neutral-900 selection:text-white`}
       >
+        <CustomCursor />
         {children}
         <ScrollToTop />
       </body>
