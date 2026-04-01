@@ -6,75 +6,39 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 const galleryImages = [
     {
         src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Luxury pool overlooking mountains',
-        span: 'row-span-2',
+        alt: 'MINIMALIST ALPINE PEAK',
+        span: 'md:col-span-2 md:row-span-2',
         category: 'Alpine',
     },
     {
         src: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Overwater bungalow at sunset',
-        span: '',
+        alt: 'PACIFIC HORIZON',
+        span: 'md:col-span-1 md:row-span-1',
         category: 'Ocean',
     },
     {
         src: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Luxury hotel lobby',
-        span: '',
+        alt: 'ARCHITECTURAL LOBBY',
+        span: 'md:col-span-1 md:row-span-1',
         category: 'Modern',
     },
     {
         src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Boutique hotel exterior',
-        span: 'row-span-2',
+        alt: 'DESERT HAVEN',
+        span: 'md:col-span-1 md:row-span-2',
         category: 'Modern',
     },
     {
         src: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Mountain retreat',
-        span: '',
+        alt: 'MOUNTAIN MIST',
+        span: 'md:col-span-2 md:row-span-1',
         category: 'Retreat',
     },
     {
         src: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Spa and wellness center',
-        span: '',
+        alt: 'WELLNESS SANCTUARY',
+        span: 'md:col-span-1 md:row-span-1',
         category: 'Retreat',
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Desert adventure landscape',
-        span: '',
-        category: 'Retreat',
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Mountain hiking adventure',
-        span: 'row-span-2',
-        category: 'Alpine',
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Road trip through mountains',
-        span: '',
-        category: 'Alpine',
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Cliffside tropical beach',
-        span: '',
-        category: 'Ocean',
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Desert sunset dunes',
-        span: '',
-        category: 'Modern',
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Ocean tropical paradise',
-        span: '',
-        category: 'Ocean',
     },
 ];
 
@@ -82,7 +46,7 @@ const categories = ['All', 'Alpine', 'Ocean', 'Modern', 'Retreat'];
 
 const TravelGallery = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: '-80px' });
+    const isInView = useInView(ref, { once: true, margin: '-100px' });
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
     const [activeCategory, setActiveCategory] = useState('All');
 
@@ -90,7 +54,6 @@ const TravelGallery = () => {
         ? galleryImages 
         : galleryImages.filter(img => img.category === activeCategory);
 
-    // Lock scroll when lightbox is open
     useEffect(() => {
         if (selectedImage !== null) {
             document.body.style.overflow = 'hidden';
@@ -99,54 +62,33 @@ const TravelGallery = () => {
         }
     }, [selectedImage]);
 
-    const handleNext = () => {
-        if (selectedImage !== null) {
-            setSelectedImage((selectedImage + 1) % galleryImages.length);
-        }
-    };
-
-    const handlePrev = () => {
-        if (selectedImage !== null) {
-            setSelectedImage((selectedImage - 1 + galleryImages.length) % galleryImages.length);
-        }
-    };
-
     return (
-        <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-12 overflow-hidden">
+        <section className="bg-white py-32 md:py-48 px-4 sm:px-6 lg:px-12 overflow-hidden">
             <div className="mx-auto max-w-7xl">
-                <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end mb-16 md:mb-24">
+                <div className="flex flex-col items-start justify-between gap-12 md:flex-row md:items-end mb-24 md:mb-32">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: '-50px' }}
-                        transition={{ duration: 0.6 }}
-                        className="max-w-xl"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        className="max-w-2xl"
                     >
-                        <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">Visual Stories</span>
-                        <h2 className="mt-6 md:mt-8 text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter text-neutral-900 uppercase leading-none">
+                        <span className="text-[10px] sm:text-xs font-black tracking-[0.6em] text-neutral-400 uppercase">Aesthetic Archives</span>
+                        <h2 className="mt-8 text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-neutral-900 uppercase leading-[0.9]">
                             MOMENTS <br /> CAPTURED
                         </h2>
                     </motion.div>
-                    <motion.p
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: '-50px' }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="max-w-sm text-lg md:text-xl font-medium text-neutral-600 leading-relaxed"
-                    >
-                        A glimpse into the extraordinary experiences curated by VOYAGE for our members.
-                    </motion.p>
                 </div>
 
-                <div className="mb-12 flex flex-wrap gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                <div className="mb-16 flex flex-wrap gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                     {categories.map((cat) => (
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
-                            className={`whitespace-nowrap rounded-full px-8 py-3 text-[10px] font-black uppercase tracking-widest transition-all ${
+                            className={`whitespace-nowrap px-8 py-3 text-[10px] font-black uppercase tracking-[0.3em] transition-all border rounded-full ${
                                 activeCategory === cat 
-                                    ? 'bg-neutral-900 text-white shadow-xl scale-105' 
-                                    : 'bg-neutral-100 text-neutral-400 hover:bg-neutral-200'
+                                    ? 'bg-neutral-900 border-neutral-900 text-white shadow-2xl' 
+                                    : 'bg-transparent border-neutral-100 text-neutral-400 hover:border-neutral-900 hover:text-neutral-900'
                             }`}
                         >
                             {cat}
@@ -154,106 +96,83 @@ const TravelGallery = () => {
                     ))}
                 </div>
 
-                <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 auto-rows-[200px] md:auto-rows-[250px] gap-4 md:gap-6">
+                <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 auto-rows-[300px] md:auto-rows-[350px] gap-6 md:gap-8">
                     <AnimatePresence mode='popLayout'>
                         {filteredImages.map((image, i) => (
                             <motion.div
                                 key={image.src}
                                 layout
-                                initial={{ opacity: 0, scale: 0.9 }}
+                                initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.5 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                                 onClick={() => setSelectedImage(galleryImages.indexOf(image))}
-                                className={`group relative overflow-hidden rounded-[24px] md:rounded-[32px] cursor-pointer ${image.span} shadow-lg transition-all hover:shadow-2xl active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-black/10`}
+                                className={`group relative overflow-hidden rounded-[40px] md:rounded-[56px] cursor-pointer ${image.span} shadow-sm transition-all hover:shadow-2xl active:scale-[0.98] outline-none`}
                             >
-                            <img
-                                src={image.src}
-                                alt={image.alt}
-                                className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
-                            />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center">
-                                <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-md rounded-full px-6 py-2 text-[10px] font-black uppercase text-white tracking-widest border border-white/20">
-                                    Expand
-                                </span>
-                            </div>
-                            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                                <p className="text-[10px] md:text-xs font-black uppercase tracking-widest text-white drop-shadow-xl bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full inline-block">
-                                    {image.alt}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
+                                <motion.img
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
+                                />
+                                <div className="absolute inset-0 bg-neutral-950/0 group-hover:bg-neutral-950/20 transition-all duration-500"></div>
+                                <div className="absolute bottom-10 left-10 right-10 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-[0.16,1,0.3,1]">
+                                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 mb-2 block">0{i + 1} // {image.category}</span>
+                                    <h4 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter">{image.alt}</h4>
+                                </div>
+                            </motion.div>
+                        ))}
                     </AnimatePresence>
                 </div>
             </div>
 
-            {/* Lightbox */}
+            {/* Cinematic Lightbox */}
             <AnimatePresence>
                 {selectedImage !== null && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 sm:p-12"
+                        className="fixed inset-0 z-[5000] flex items-center justify-center bg-black/98 backdrop-blur-3xl p-4 sm:p-24"
                         onClick={() => setSelectedImage(null)}
                     >
                         <motion.button
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="absolute top-8 right-8 z-[60] text-white hover:text-neutral-400 p-4 transition-colors focus:outline-none"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="absolute top-12 right-12 z-[60] text-white hover:text-neutral-400 p-4 transition-colors"
                             onClick={() => setSelectedImage(null)}
                         >
-                            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </motion.button>
 
-                        <motion.button
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="absolute left-4 sm:left-12 z-[60] text-white p-4 hover:bg-white/10 rounded-full transition-all"
-                            onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-                        >
-                            <svg className="w-8 h-8 md:w-12 md:h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </motion.button>
-
-                        <motion.button
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="absolute right-4 sm:right-12 z-[60] text-white p-4 hover:bg-white/10 rounded-full transition-all"
-                            onClick={(e) => { e.stopPropagation(); handleNext(); }}
-                        >
-                            <svg className="w-8 h-8 md:w-12 md:h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </motion.button>
-
-                        <motion.div
-                            key={selectedImage}
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                            className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center gap-6"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <img
+                        <div className="relative w-full h-full flex flex-col items-center justify-center">
+                            <motion.img
+                                key={selectedImage}
+                                initial={{ scale: 0.9, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.9, opacity: 0 }}
+                                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                                 src={galleryImages[selectedImage].src}
                                 alt={galleryImages[selectedImage].alt}
-                                className="max-h-[80vh] w-auto object-contain rounded-2xl shadow-2xl"
+                                className="max-h-[70vh] w-auto object-contain rounded-[40px] shadow-3xl grayscale transition-all duration-1000 hover:grayscale-0"
                             />
-                            <div className="text-center">
-                                <p className="text-white text-lg md:text-2xl font-bold uppercase tracking-widest bg-black/40 backdrop-blur-md px-8 py-4 rounded-3xl border border-white/10 select-none">
-                                    {galleryImages[selectedImage].alt}
+                            
+                            <motion.div 
+                                initial={{ y: 50, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.3, duration: 0.8 }}
+                                className="mt-16 text-center"
+                            >
+                                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/30 mb-4 block">Archived Moment</span>
+                                <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-[0.1em]">{galleryImages[selectedImage].alt}</h3>
+                                <p className="mt-6 text-white/40 text-xs font-black uppercase tracking-[0.4em]">
+                                    Sequence // 0{selectedImage + 1}
                                 </p>
-                                <p className="mt-4 text-white/40 text-xs font-black uppercase tracking-[0.4em]">
-                                    {selectedImage + 1} / {galleryImages.length}
-                                </p>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
