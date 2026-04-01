@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+
 const features = [
     {
         title: 'VERIFIED EXCELLENCE',
@@ -26,44 +27,51 @@ const features = [
 
 const Features = () => {
     return (
-        <section className="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-12">
+        <section className="bg-white py-32 md:py-48 px-4 sm:px-6 lg:px-12">
             <div className="mx-auto max-w-7xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32 items-start">
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: '-50px' }}
-                        transition={{ duration: 0.6 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-neutral-400 uppercase">The Expedition Standard</span>
-                        <h2 className="mt-6 md:mt-8 text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter text-neutral-900 uppercase leading-none">
+                        <span className="text-[10px] sm:text-xs font-black tracking-[0.5em] text-neutral-400 uppercase">The Expedition Standard</span>
+                        <h2 className="mt-8 text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-neutral-900 uppercase leading-[0.9]">
                             ELEVATING <br /> HOW YOU <br /> DISCOVER
                         </h2>
-                        <p className="mt-8 md:mt-12 max-w-md text-lg md:text-xl font-medium leading-relaxed text-neutral-600">
+                        <p className="mt-12 max-w-md text-xl font-medium leading-relaxed text-neutral-600">
                             We view global exploration not just as a getaway, but as an investment into your legacy. Time is your ultimate luxury; we ensure not a second is wasted.
                         </p>
-                        <div className="mt-12 md:mt-16 aspect-[16/9] lg:aspect-square max-w-sm md:max-w-md overflow-hidden rounded-[32px] md:rounded-[48px]">
-                            <img
+                        <div className="mt-16 relative aspect-[4/5] lg:aspect-square max-w-md overflow-hidden rounded-[40px] md:rounded-[56px] shadow-2xl">
+                            <motion.img
+                                initial={{ scale: 1.2 }}
+                                whileInView={{ scale: 1 }}
+                                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                                 src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=1000"
                                 alt="Luxury Lifestyle"
-                                className="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                className="h-full w-full object-cover grayscale opacity-90 transition-all duration-700"
                             />
+                            <div className="absolute inset-0 bg-neutral-900/10 pointer-events-none"></div>
                         </div>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
+                    <div className="grid grid-cols-1 gap-8 md:gap-12 mt-12 lg:mt-0">
                         {features.map((feature, i) => (
                             <motion.div 
                                 key={feature.title} 
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-50px' }}
-                                transition={{ duration: 0.5, delay: i * 0.15 }}
-                                className="group flex flex-col items-start p-6 md:p-8 rounded-[32px] md:rounded-[40px] border border-black/5 bg-neutral-50 transition-all hover:bg-neutral-900 hover:text-white"
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                                className="group flex flex-col items-start p-10 md:p-14 rounded-[40px] border border-black/5 bg-neutral-50 transition-all hover:bg-neutral-950 hover:shadow-2xl"
                             >
-                                <span className="text-3xl md:text-4xl font-black tracking-tighter opacity-20 group-hover:opacity-40">{feature.icon}</span>
-                                <h3 className="mt-6 md:mt-8 text-xl md:text-2xl font-black tracking-tight">{feature.title}</h3>
-                                <p className="mt-3 md:mt-4 text-sm font-medium leading-relaxed opacity-60">
+                                <div className="flex items-center gap-6 mb-8">
+                                    <span className="text-4xl md:text-5xl font-black tracking-tighter text-neutral-200 group-hover:text-white/20 transition-colors">{feature.icon}</span>
+                                    <div className="h-px w-8 bg-neutral-200 group-hover:bg-white/20 transition-colors"></div>
+                                </div>
+                                <h3 className="text-2xl md:text-3xl font-black tracking-tighter text-neutral-900 group-hover:text-white uppercase transition-colors">{feature.title}</h3>
+                                <p className="mt-6 text-base font-medium leading-relaxed text-neutral-500 group-hover:text-white/50 transition-colors">
                                     {feature.description}
                                 </p>
                             </motion.div>
