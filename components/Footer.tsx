@@ -1,26 +1,39 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
     return (
-        <footer className="border-t border-black/5 bg-neutral-200 py-16 md:py-24">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
-                <div className="grid grid-cols-1 gap-12 md:gap-16 md:grid-cols-4">
-                    <div className="col-span-1 md:col-span-2">
-                        <Link href="/" className="flex items-center gap-4 transition-opacity hover:opacity-80">
-                            <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-neutral-900 text-white">
-                                <span className="text-lg sm:text-xl font-bold">V</span>
+        <footer className="bg-neutral-900 py-32 md:py-48 px-4 sm:px-6 lg:px-12 text-white overflow-hidden">
+            <div className="mx-auto max-w-7xl">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24">
+                    <div className="lg:col-span-12 items-center flex justify-between mb-16 md:mb-24">
+                         <Link href="/" className="flex items-center gap-4 group">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-neutral-900 overflow-hidden relative">
+                                <motion.span 
+                                    whileHover={{ y: -40 }}
+                                    className="text-2xl font-black absolute"
+                                >
+                                    V
+                                </motion.span>
+                                <motion.span 
+                                    initial={{ y: 40 }}
+                                    whileHover={{ y: 0 }}
+                                    className="text-2xl font-black absolute"
+                                >
+                                    V
+                                </motion.span>
                             </div>
-                            <span className="text-xl sm:text-2xl font-black tracking-tighter text-neutral-900">VOYAGE</span>
+                            <span className="text-3xl font-black tracking-tighter text-white uppercase">VOYAGE</span>
                         </Link>
-                        <p className="mt-6 md:mt-8 max-w-sm text-base md:text-lg font-medium leading-relaxed text-neutral-600">
-                            Elevating travel experiences with curated escapes and seamless bookings. Discover the world&apos;s most exclusive destinations with VOYAGE.
-                        </p>
-                        <div className="mt-8 flex gap-6">
+                        
+                        <div className="hidden md:flex gap-12">
                             {['Instagram', 'Twitter', 'LinkedIn'].map((platform) => (
                                 <Link
                                     key={platform}
                                     href="#"
-                                    className="text-[10px] font-black uppercase tracking-widest text-neutral-400 transition-colors hover:text-neutral-900"
+                                    className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 transition-colors hover:text-white"
                                 >
                                     {platform}
                                 </Link>
@@ -28,36 +41,62 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-2">
+                    <div className="lg:col-span-4 space-y-12">
+                        <p className="text-2xl font-black leading-tight tracking-tighter uppercase max-w-sm">
+                            Elevating travel experiences with curated escapes and seamless bookings. 
+                        </p>
+                        <div className="flex flex-col gap-4">
+                            <span className="text-[10px] font-black tracking-[0.4em] text-white/30 uppercase">Newsletter</span>
+                            <div className="relative max-w-sm">
+                                <input 
+                                    type="email" 
+                                    placeholder="your@email.com" 
+                                    className="w-full bg-transparent border-b border-white/10 pb-4 text-lg font-medium focus:outline-none focus:border-white transition-colors"
+                                />
+                                <button className="absolute right-0 bottom-4 text-sm font-black uppercase tracking-widest hover:text-white/50 transition-colors">Join</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="lg:col-span-8 grid grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
                         <div>
-                            <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-neutral-900">Explore</h4>
-                            <ul className="mt-6 md:mt-8 space-y-4 md:space-y-6">
-                                <li><Link href="/destinations" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Destinations</Link></li>
-                                <li><Link href="/experiences" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Experiences</Link></li>
-                                <li><Link href="/packages" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Travel Packages</Link></li>
-                                <li><Link href="/blog" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Travel Blog</Link></li>
+                            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Explore</h4>
+                            <ul className="mt-8 space-y-4">
+                                {['Destinations', 'Experiences', 'Packages', 'Magazine'].map((item) => (
+                                    <li key={item}>
+                                        <Link href="#" className="text-sm font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">{item}</Link>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
-
                         <div>
-                            <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-neutral-900">Support</h4>
-                            <ul className="mt-6 md:mt-8 space-y-4 md:space-y-6">
-                                <li><Link href="/about" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">About Us</Link></li>
-                                <li><Link href="/contact" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Contact & Support</Link></li>
-                                <li><Link href="#" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Help Center</Link></li>
-                                <li><Link href="#" className="text-sm font-bold text-neutral-600 transition-colors hover:text-black">Privacy Policy</Link></li>
+                            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Protocol</h4>
+                            <ul className="mt-8 space-y-4">
+                                {['Membership', 'Safety', 'Privacy', 'Manifesto'].map((item) => (
+                                    <li key={item}>
+                                        <Link href="#" className="text-sm font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">{item}</Link>
+                                    </li>
+                                ))}
                             </ul>
+                        </div>
+                        <div className="col-span-2 lg:col-span-1">
+                            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Office</h4>
+                            <p className="mt-8 text-sm font-bold text-white/50 leading-loose uppercase tracking-widest">
+                                45 Bahnhofstrasse <br />
+                                8001 Zurich <br />
+                                Switzerland
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-16 md:mt-24 border-t border-black/5 pt-10 md:pt-12 flex flex-col items-center justify-between gap-6 md:flex-row">
-                    <p className="text-[9px] md:text-xs font-bold uppercase tracking-widest text-neutral-400">
-                        © {new Date().getFullYear()} VOYAGE TRAVEL INC. ALL RIGHTS RESERVED.
+                <div className="mt-24 md:mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">
+                        © {new Date().getFullYear()} VOYAGE TRAVEL INC. 
                     </p>
-                    <div className="flex gap-8">
-                        {['Press', 'Careers', 'Cookie Policy'].map((item) => (
-                            <Link key={item} href="#" className="text-[9px] md:text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-neutral-900 transition-colors">
+                    <div className="flex gap-12">
+                        {['Terms', 'Cookies', 'Security'].map((item) => (
+                            <Link key={item} href="#" className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20 hover:text-white transition-colors">
                                 {item}
                             </Link>
                         ))}
