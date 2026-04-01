@@ -38,39 +38,6 @@ const packages = [
         image:
             'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200',
     },
-    {
-        id: 'pk-4',
-        title: 'SAHARA ROYAL CARAVAN',
-        duration: '10 Days',
-        description:
-            'Ride through golden dunes in a private desert caravan with luxury nomad tents, sunset camel journeys, and starlit banquets.',
-        price: 'From $18,000',
-        spots: 'Only 10 spots remaining',
-        image:
-            'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=1200',
-    },
-    {
-        id: 'pk-5',
-        title: 'PACIFIC ISLAND ESCAPE',
-        duration: '8 Days',
-        description:
-            'Stay in a private overwater villa in the Pacific. Crystal waters, yacht excursions, and chef-curated island dining experiences.',
-        price: 'From $24,000',
-        spots: 'Only 5 spots remaining',
-        image:
-            'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1200',
-    },
-    {
-        id: 'pk-6',
-        title: 'NORWEGIAN FJORD VOYAGE',
-        duration: '11 Days',
-        description:
-            'Sail through dramatic fjords aboard a luxury expedition yacht. Witness northern lights, glaciers, and remote Nordic villages.',
-        price: 'From $29,000',
-        spots: 'Only 7 spots remaining',
-        image:
-            'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1200',
-    },
 ];
 
 type FeaturedPackagesProps = {
@@ -98,183 +65,131 @@ const FeaturedPackages = ({ limit, buttonLabel }: FeaturedPackagesProps) => {
     const ctaLabel = buttonLabel ?? (limit ? 'Show more' : 'View All Packages');
 
     return (
-        <section className="bg-neutral-900 py-24 md:py-32 px-4 sm:px-6 lg:px-12 text-white">
+        <section className="bg-neutral-900 py-32 md:py-48 px-4 sm:px-6 lg:px-12 text-white">
             <div className="mx-auto max-w-7xl">
-                <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end mb-16 md:mb-24">
+                <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end mb-24 md:mb-32">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: '-50px' }}
-                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className="max-w-xl"
                     >
-                        <span className="text-[10px] sm:text-xs font-black tracking-[0.4em] text-white/50 uppercase">Extremely Limited</span>
-                        <h2 className="mt-6 md:mt-8 text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter text-white uppercase leading-none">
+                        <span className="text-[10px] sm:text-xs font-black tracking-[0.5em] text-white/40 uppercase">Extremely Limited</span>
+                        <h2 className="mt-8 text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9]">
                             SIGNATURE <br /> EXPEDITIONS
                         </h2>
                     </motion.div>
-                    {!limit && (
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: '-50px' }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                        >
-                            <Link
-                                href="/packages"
-                                className="group flex cursor-pointer items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white transition-all hover:gap-6"
-                            >
-                                {ctaLabel}
-                                <span className="h-px w-8 sm:w-12 bg-white transition-all group-hover:w-16"></span>
-                            </Link>
-                        </motion.div>
-                    )}
                 </div>
 
-                <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div ref={ref} className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                     {visiblePackages.map((pkg, i) => (
                         <motion.div
                             key={pkg.id}
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: i * 0.2 }}
-                            className="group flex flex-col overflow-hidden rounded-[32px] md:rounded-[48px] bg-neutral-800 border border-white/5"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            className="group relative flex flex-col overflow-hidden rounded-[40px] bg-neutral-800 border border-white/5 cursor-pointer"
+                            onClick={() => setSelectedPkg(pkg)}
                         >
-                            <div className="relative aspect-16/10 overflow-hidden">
-                                <img
+                            <div className="relative aspect-[10/12] overflow-hidden">
+                                <motion.img
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                                     src={pkg.image}
                                     alt={pkg.title}
-                                    className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale hover:grayscale-0"
+                                    className="h-full w-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0"
                                 />
-                                <div className="absolute top-6 left-6 flex items-center gap-2 rounded-full bg-black/50 px-4 py-2 backdrop-blur-md border border-white/10">
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-white">{pkg.duration}</span>
+                                <div className="absolute inset-0 bg-linear-to-b from-transparent via-neutral-900/20 to-neutral-900/80"></div>
+                                
+                                <div className="absolute bottom-8 left-8 right-8">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <span className="text-[9px] font-black tracking-[0.2em] px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-white/80 border border-white/10 uppercase">
+                                            {pkg.duration}
+                                        </span>
+                                        <span className="h-px w-8 bg-white/20"></span>
+                                        <span className="text-[9px] font-black tracking-[0.2em] text-white/40 uppercase">Limited Available</span>
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-black tracking-tighter text-white uppercase leading-[0.9]">
+                                        {pkg.title}
+                                    </h3>
                                 </div>
                             </div>
 
-                            <div className="p-8 md:p-12">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full border ${pkg.spots.includes('Waitlist') ? 'bg-amber-500/10 border-amber-500/20 text-amber-500' : 'bg-white/10 border-white/10 text-white/60'}`}>
-                                        {pkg.spots.includes('Waitlist') ? 'Waitlist' : 'Limited'}
-                                    </span>
-                                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">{pkg.spots}</span>
-                                </div>
-                                <h3 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase leading-tight group-hover:underline underline-offset-8 transition-all">
-                                    {pkg.title}
-                                </h3>
-                                <p className="mt-6 text-base font-medium leading-relaxed text-white/60 line-clamp-2">
+                            <div className="p-8 md:p-10">
+                                <p className="text-sm font-medium leading-relaxed text-white/50 line-clamp-2">
                                     {pkg.description}
                                 </p>
-
-                                <div className="mt-10 pt-8 border-t border-white/10 flex items-center justify-between">
+                                <div className="mt-8 flex items-center justify-between border-t border-white/5 pt-8">
                                     <p className="text-xl md:text-2xl font-black text-white">{pkg.price}</p>
-                                    <button 
-                                        onClick={() => setSelectedPkg(pkg)}
-                                        className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-neutral-900 transition-transform group-hover:scale-110 cursor-pointer focus:outline-none"
-                                    >
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-neutral-900 transition-all group-hover:scale-110 active:scale-95">
                                         <span className="text-xl">→</span>
-                                    </button>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
-
-                {limit && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="mt-16 flex justify-center"
-                    >
-                        <Link
-                            href="/packages"
-                            className="group flex cursor-pointer items-center gap-6 rounded-full border border-white/10 bg-white/5 px-12 py-5 text-sm font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-white hover:text-neutral-900 active:scale-95"
-                        >
-                            {buttonLabel || 'Show more packages'}
-                            <span className="text-xl transition-transform group-hover:translate-x-2">→</span>
-                        </Link>
-                    </motion.div>
-                )}
             </div>
 
-            {/* Quick View Modal */}
+            {/* Premium Modal */}
             <AnimatePresence>
                 {selectedPkg && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6"
+                        className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 sm:p-12"
                         onClick={() => setSelectedPkg(null)}
                     >
                         <motion.div
-                            initial={{ scale: 0.95, y: 20, opacity: 0 }}
+                            initial={{ scale: 0.9, y: 50, opacity: 0 }}
                             animate={{ scale: 1, y: 0, opacity: 1 }}
-                            exit={{ scale: 0.95, y: 20, opacity: 0 }}
+                            exit={{ scale: 0.9, y: 50, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
                             onClick={(e) => e.stopPropagation()}
-                            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-[32px] bg-neutral-900 shadow-2xl border border-white/10 flex flex-col md:flex-row"
+                            className="relative w-full max-w-6xl overflow-hidden rounded-[40px] bg-neutral-900 border border-white/5 shadow-2xl flex flex-col md:flex-row"
                         >
                             <button
                                 onClick={() => setSelectedPkg(null)}
-                                className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-colors hover:bg-black/80 focus:outline-none"
+                                className="absolute right-8 top-8 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white backdrop-blur-md transition-colors hover:bg-white/10"
                             >
-                                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
 
-                            <div className="relative h-64 md:h-auto md:w-[45%] shrink-0">
+                            <div className="md:w-1/2 aspect-square md:aspect-auto relative group">
                                 <img
                                     src={selectedPkg.image}
                                     alt={selectedPkg.title}
-                                    className="absolute inset-0 h-full w-full object-cover grayscale"
+                                    className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0"
                                 />
-                                <div className="absolute top-6 left-6 flex items-center gap-2 rounded-full bg-black/50 px-4 py-2 backdrop-blur-md border border-white/10">
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-white">{selectedPkg.duration}</span>
-                                </div>
+                                <div className="absolute inset-0 bg-neutral-900/40"></div>
                             </div>
 
-                            <div className="flex flex-col p-8 md:p-12 md:w-[55%]">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full border ${selectedPkg.spots.includes('Waitlist') ? 'bg-amber-500/10 border-amber-500/20 text-amber-500' : 'bg-white/10 border-white/10 text-white/60'}`}>
-                                        {selectedPkg.spots.includes('Waitlist') ? 'Waitlist' : 'Limited'}
-                                    </span>
-                                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">{selectedPkg.spots}</span>
-                                </div>
-                                <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase leading-tight">
-                                    {selectedPkg.title}
-                                </h3>
-                                <p className="mt-4 text-sm sm:text-base font-medium leading-relaxed text-white/60">
-                                    {selectedPkg.description}
-                                </p>
-                                
-                                <div className="mt-6 mb-6 flex-grow">
-                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-white/80 mb-4">Highlights</h4>
-                                    <ul className="space-y-3">
-                                        {[
-                                            'Private guided expeditions',
-                                            'Luxury accommodations',
-                                            'Gourmet dining experiences',
-                                            'All-inclusive transport'
-                                        ].map((highlight, idx) => (
-                                            <li key={idx} className="flex items-center gap-3">
-                                                <span className="h-1 w-1 rounded-full bg-white text-white/50"></span>
-                                                <span className="text-xs sm:text-sm font-medium text-white/50">{highlight}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                <div className="pt-6 border-t border-white/10">
-                                    <p className="text-xs font-bold text-white/40 uppercase tracking-wider mb-2">Starting from</p>
-                                    <div className="flex items-center justify-between">
-                                        <p className="text-2xl sm:text-3xl font-black text-white">{selectedPkg.price}</p>
+                            <div className="flex flex-col p-12 md:p-20 md:w-1/2 justify-center">
+                                <div className="space-y-8">
+                                    <div>
+                                        <span className="text-[10px] font-black tracking-[0.4em] text-white/30 uppercase">Exclusive Expedition</span>
+                                        <h3 className="mt-4 text-4xl sm:text-6xl font-black tracking-tighter text-white uppercase leading-[0.9]">
+                                            {selectedPkg.title}
+                                        </h3>
+                                    </div>
+                                    <p className="text-xl font-medium leading-relaxed text-white/60">
+                                        {selectedPkg.description}
+                                    </p>
+                                    <div className="pt-8 border-t border-white/10 flex items-center justify-between">
+                                        <div>
+                                            <p className="text-[10px] font-black tracking-[0.4em] text-white/30 mb-2 uppercase">Starting from</p>
+                                            <p className="text-4xl md:text-5xl font-black text-white">{selectedPkg.price}</p>
+                                        </div>
                                         <Link
                                             href={`/packages/${selectedPkg.id}`}
-                                            className="rounded-full bg-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-black uppercase tracking-[0.2em] text-neutral-900 transition-all hover:bg-neutral-200 active:scale-95 text-center"
+                                            className="rounded-full bg-white px-12 py-6 text-sm font-black uppercase tracking-[0.2em] text-neutral-900 transition-all hover:bg-neutral-200 active:scale-95"
                                         >
-                                            Book Now
+                                            Inquire Now
                                         </Link>
                                     </div>
                                 </div>
