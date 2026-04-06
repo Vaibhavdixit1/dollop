@@ -46,8 +46,8 @@ const CTA = () => {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="mt-12 md:mt-16 flex flex-col items-center justify-center gap-6 sm:flex-row"
                 >
-                    <Link href="/signup" className="group relative w-full sm:w-auto overflow-hidden rounded-full bg-neutral-900 px-10 md:px-12 py-5 md:py-6 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 active:scale-95 shadow-2xl">
-                        <span className="relative z-10">Start Your Journey</span>
+                    <Link href="/signup" className="group relative w-full sm:w-auto overflow-hidden rounded-full bg-neutral-900 px-10 md:px-12 py-5 md:py-6 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 hover:bg-neutral-800 active:scale-95 shadow-2xl">
+                        <span className="relative z-10">EXPLORE NOW</span>
                     </Link>
                     <Link href="/about" className="group flex items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-neutral-900 transition-all hover:gap-6">
                         Learn our story
