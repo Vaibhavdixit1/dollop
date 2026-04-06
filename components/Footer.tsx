@@ -50,10 +50,10 @@ const Footer = () => {
                             <div className="relative max-w-sm">
                                 <input 
                                     type="email" 
-                                    placeholder="your@email.com" 
-                                    className="w-full bg-transparent border-b border-white/10 pb-4 text-lg font-medium focus:outline-none focus:border-white transition-colors"
+                                    placeholder="JOIN OUR CIRCLE" 
+                                    className="w-full bg-transparent border-b border-white/10 pb-4 text-lg font-medium focus:outline-none focus:border-white transition-colors uppercase tracking-widest"
                                 />
-                                <button className="absolute right-0 bottom-4 text-sm font-black uppercase tracking-widest hover:text-white/50 transition-colors">Join</button>
+                                <button className="absolute right-0 bottom-4 text-sm font-black uppercase tracking-widest hover:text-white/50 transition-colors">SIGN UP</button>
                             </div>
                         </div>
                     </div>
