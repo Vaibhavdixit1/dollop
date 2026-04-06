@@ -81,17 +81,19 @@ const Newsletter = () => {
                                         required
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="your@email.com"
+                                        placeholder="ENTER YOUR EMAIL"
                                         className="w-full bg-neutral-100 border-none rounded-3xl md:rounded-full px-8 py-5 text-neutral-900 font-bold placeholder-neutral-400 focus:ring-2 focus:ring-neutral-900 outline-none transition-all"
                                     />
                                 </div>
-                                <button
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="bg-neutral-900 text-white rounded-3xl md:rounded-full px-12 py-5 font-black uppercase tracking-[0.2em] hover:bg-neutral-800 transition-all active:scale-[0.95] disabled:opacity-50 whitespace-nowrap"
+                                    className="bg-neutral-900 text-white rounded-3xl md:rounded-full px-12 py-5 font-black uppercase tracking-[0.2em] hover:bg-neutral-800 transition-all disabled:opacity-50 whitespace-nowrap"
                                 >
                                     {status === 'loading' ? 'Processing...' : 'Subscribe'}
-                                </button>
+                                </motion.button>
                             </form>
                             <p className="mt-8 text-[9px] text-neutral-400 font-black uppercase tracking-[0.3em]">
                                 Privacy is absolute. No secondary distribution.
