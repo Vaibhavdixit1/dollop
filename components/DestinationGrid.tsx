@@ -10,10 +10,10 @@ const destinations = [
         id: 1, 
         name: 'Bora Bora', 
         location: 'French Polynesia', 
-        price: '$2,400', 
+        price: '$12,400', 
         rating: 4.9, 
         image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800',
-        description: 'Experience the ultimate overwater luxury in the heart of French Polynesia. Crystal clear lagoons and emerald-green peaks await.',
+        description: 'The archetype of isolation. Experience overwater sanctuaries in the heart of French Polynesia, where the horizon is yours alone.',
         bestTime: 'May to October',
         highlights: ['Private Boat Tour', 'Snorkeling with Manta Rays', 'Underwater Dining'],
     },
@@ -21,10 +21,10 @@ const destinations = [
         id: 2, 
         name: 'Swiss Alps', 
         location: 'Switzerland', 
-        price: '$1,850', 
+        price: '$8,850', 
         rating: 4.8, 
         image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800',
-        description: 'Pristine slopes, cozy chalets, and breathtaking mountain vistas. Perfect for both adventure seekers and those looking for mountain peace.',
+        description: 'Architectural marvels suspended in the clouds. Modernist retreats offering total immersion in the sublime silence of the high peaks.',
         bestTime: 'December to March',
         highlights: ['Glacier Express Ride', 'Luxury Spas', 'Off-piste Skiing'],
     },
@@ -32,10 +32,10 @@ const destinations = [
         id: 3, 
         name: 'Santorini', 
         location: 'Greece', 
-        price: '$1,200', 
+        price: '$5,200', 
         rating: 4.7, 
         image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&q=80&w=800',
-        description: 'Iconic blue-domed churches and white-washed buildings overlooking the caldera. Famous for the world\'s most beautiful sunsets.',
+        description: 'Bespoke living above the caldera. Exclusive villas offering private vantage points for the Mediterranean’s most guarded sunsets.',
         bestTime: 'September or June',
         highlights: ['Private Yacht Sunset Cruise', 'Wine Tasting', 'Oia Village Walk'],
     },
@@ -43,10 +43,10 @@ const destinations = [
         id: 4, 
         name: 'Kyoto', 
         location: 'Japan', 
-        price: '$950', 
+        price: '$6,800', 
         rating: 4.9, 
         image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800',
-        description: 'A city where tradition meets modernity. Explore thousand-year-old temples, tranquil Zen gardens, and historic Geisha districts.',
+        description: 'Quietude in the heart of history. Retreat to private ryokans nestled within centuries-old gardens, capturing the true essence of Kyoto.',
         bestTime: 'April or November',
         highlights: ['Zen Gardens', 'Traditional Tea Ceremony', 'Historic Arashiyama'],
     },
@@ -76,9 +76,9 @@ const DestinationGrid = () => {
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className="max-w-xl"
                     >
-                        <span className="text-[10px] sm:text-xs font-black tracking-[0.6em] text-neutral-400 uppercase">Curated Discovery</span>
+                        <span className="text-[10px] sm:text-xs font-black tracking-[0.6em] text-neutral-400 uppercase">The Portfolio</span>
                         <h2 className="mt-8 text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-neutral-900 uppercase leading-[0.9]">
-                            POPULAR <br /> DESTINATIONS
+                            SELECTED <br /> DOMAINS
                         </h2>
                     </motion.div>
                 </div>
