@@ -41,12 +41,12 @@ const Newsletter = () => {
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     className="max-w-3xl"
                 >
-                    <span className="text-[10px] sm:text-xs font-black tracking-[0.6em] text-white/40 uppercase">The Voyage Journal</span>
+                    <span className="text-[10px] sm:text-xs font-black tracking-[0.6em] text-white/40 uppercase">The Sentinel Dispatch</span>
                     <h2 className="mt-8 text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9]">
-                        UNFILTERED <br /> INSPIRATION
+                        RESERVED <br /> ACCESS ONLY
                     </h2>
                     <p className="mt-12 text-xl font-medium text-white/50 leading-relaxed max-w-xl mx-auto">
-                        Join our exclusive circle of travelers. Receive curated itineraries, hidden gems, and first access to our seasonal retreats.
+                        Join the inner circle. Gain entry to classified dossiers, private expeditions, and limited-edition retreats restricted to the few.
                     </p>
                 </motion.div>
 
