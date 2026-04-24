@@ -18,7 +18,7 @@ const CTA = () => {
                     transition={{ duration: 0.5 }}
                     className="text-[10px] sm:text-xs font-black tracking-[0.5em] text-neutral-400 uppercase"
                 >
-                    Your Next Chapter
+                    The Final Frontier
                 </motion.span>
                 <motion.h2 
                     initial={{ opacity: 0, y: 20 }}
@@ -27,8 +27,8 @@ const CTA = () => {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className="mt-6 md:mt-8 text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-neutral-900 uppercase leading-[1.1] md:leading-[0.9]"
                 >
-                    READY TO ESCAPE <br />
-                    <span className="text-neutral-400">THE ORDINARY?</span>
+                    SEEK THE <br />
+                    <span className="text-neutral-400">EXCEPTIONAL.</span>
                 </motion.h2>
                 <motion.p 
                     initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ const CTA = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="mx-auto mt-8 md:mt-12 max-w-2xl text-lg md:text-xl font-medium leading-relaxed text-neutral-600"
                 >
-                    Join over 25,000+ luxury travelers who explore the world with VOYAGE. Unlock exclusive access to hidden gems and private escapes.
+                    The world is shrinking. True isolation is the last remaining luxury. Secure your passage into the unmapped.
                 </motion.p>
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}

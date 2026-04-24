@@ -5,15 +5,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
     {
-        question: 'How does the VOYAGE membership work?',
-        answer: 'VOYAGE offers three membership tiers — Essential, Premium, and Elite. Each tier unlocks progressively deeper access to curated destinations, private transfers, concierge services, and invite-only experiences. Membership is annual and can be upgraded at any time.',
+        question: 'What defines the VOYAGE membership?',
+        answer: 'VOYAGE provides a gated ecosystem through three tiers — Essential, Premium, and Elite. Each level grants progressively deeper entry into curated domains, private aviation, and unlisted experiences. Membership is vetted and renewed annually.',
     },
     {
-        question: 'Can I customize my travel itinerary?',
-        answer: 'Absolutely. Every VOYAGE itinerary is fully bespoke. After an initial consultation with your personal curator, we design a tailored journey based on your preferences, pace, interests, and budget. No two trips are ever the same.',
+        question: 'How do you architect a journey?',
+        answer: 'Precision is our standard. Every VOYAGE itinerary is built from the ground up. Following a deep-dive consultation with your personal curator, we engineer a sequence of moments tailored to your specific cognitive and physical needs.',
     },
     {
-        question: 'What destinations do you cover?',
+        question: 'What is the scope of your global coverage?',
         answer: 'We currently curate experiences across 150+ destinations spanning 6 continents. From the Yaeyama Islands of Japan to the fjords of Norway, the Amalfi Coast to Patagonia — our network covers both iconic landmarks and hidden gems.',
     },
     {
@@ -36,7 +36,7 @@ const FAQ = () => {
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className="md:w-1/3"
                     >
-                        <span className="text-[10px] sm:text-xs font-black tracking-[0.6em] text-neutral-400 uppercase">Support</span>
+                        <span className="text-[10px] sm:text-xs font-black tracking-[0.6em] text-neutral-400 uppercase">The Protocol</span>
                         <h2 className="mt-8 text-5xl sm:text-6xl font-black tracking-tighter text-neutral-900 uppercase leading-[0.9]">
                             FREQUENTLY <br /> ASKED
                         </h2>

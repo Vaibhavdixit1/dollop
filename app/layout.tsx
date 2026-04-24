@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "VOYAGE — Luxury Travel Experiences",
-  description: "Experience luxury travel like never before. From hidden tropical paradises to majestic mountain peaks, VOYAGE curates the world's most exclusive escapes.",
+  description: "We curate silence. We engineer scarcity. Experience the world through a lens of absolute rarity with VOYAGE.",
 };
 
 import ScrollToTop from "@/components/ScrollToTop";

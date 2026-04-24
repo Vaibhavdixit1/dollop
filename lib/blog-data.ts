@@ -19,8 +19,8 @@ export const blogPosts: BlogPost[] = [
         id: 1,
         slug: 'secret-beaches-southern-japan',
         date: 'March 10, 2026',
-        title: 'The Secret Beaches of Southern Japan',
-        excerpt: 'Discover the untouched coastal paradises of Okinawa, where luxury meets the emerald sea in ways you’ve never imagined.',
+        title: 'THE ARCHIPELAGO OF ABSENCE',
+        excerpt: 'Navigating the untouched coastal sanctuaries of Southern Japan, where silence is the ultimate luxury.',
         image: 'https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=1200',
         category: 'GUIDES',
         author: {
@@ -39,8 +39,8 @@ export const blogPosts: BlogPost[] = [
         id: 2,
         slug: 'architecture-alps-modern-escapes',
         date: 'March 05, 2026',
-        title: 'Architecture of the Alps: Modern Escapes',
-        excerpt: 'Exploring the intersection of brutalist design and natural majesty in the latest Swiss mountain retreats.',
+        title: 'MONOLITHS OF THE MASSIVE',
+        excerpt: 'An exploration into the intersection of brutalist geometry and glacial majesty in the Swiss high valleys.',
         image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1200',
         category: 'DESIGN',
         author: {
@@ -59,8 +59,8 @@ export const blogPosts: BlogPost[] = [
         id: 3,
         slug: 'curation-vs-tourism-new-travel',
         date: 'February 28, 2026',
-        title: 'Curation vs Tourism: The New Travel',
-        excerpt: 'Why the modern elite are moving away from traditional sightseeing towards deep, curated cultural immersion.',
+        title: 'THE CURATOR’S MANIFESTO',
+        excerpt: 'Why the modern traveler is abandoning traditional sightseeing in favor of deep, cognitive immersion.',
         image: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=1200',
         category: 'EXPERIENCES',
         author: {
