@@ -5,16 +5,16 @@ import { useRef } from 'react';
 
 const values = [
     {
-        title: 'ARCHITECTURAL INTEGRITY',
-        description: 'We do not compromise on aesthetics. Every property we represent is vetted for its architectural significance, interior mastery, and harmony with its environment.',
+        title: 'AESTHETIC PURITY',
+        description: 'We do not compromise on visual truth. Every domain we curate is vetted for its architectural significance, interior mastery, and absolute harmony with the natural order.',
     },
     {
-        title: 'TOTAL ANONYMITY',
-        description: 'For our elite client roster, privacy is non-negotiable. We execute deeply confidential itineraries, utilizing ghost flights and secure, off-the-grid domains.',
+        title: 'ABSOLUTE DISCRETION',
+        description: 'For our elite collective, privacy is the ultimate currency. We execute deeply confidential itineraries, utilizing secure, off-the-grid domains and unlisted routes.',
     },
     {
-        title: 'ECOLOGICAL STEWARDSHIP',
-        description: 'True luxury safeguards next generations. A mandatory percentage of our proceeds funds marine preservation, aggressive wildlife protection, and local artisan heritage.',
+        title: 'LEGACY PRESERVATION',
+        description: 'True luxury safeguards the future. A significant percentage of our proceeds directly funds marine preservation, wildlife protection, and the revival of local artisan heritage.',
     },
 ];
 
@@ -58,7 +58,7 @@ const Philosophy = () => {
                         className="lg:w-1/2"
                     >
                         <p className="text-2xl md:text-3xl font-black leading-tight text-neutral-900 tracking-tight">
-                            We reject mass tourism and formulaic vacations. The modern traveler requires scarcity, authenticity, and profound isolation away from the crowds.
+                            We reject the formulaic. True luxury is not found in the crowd, but in the profound silence of the unvisited.
                         </p>
                     </motion.div>
                 </div>
