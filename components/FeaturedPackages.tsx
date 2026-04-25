@@ -10,7 +10,7 @@ const packages = [
         title: 'THE ANTARCTIC SILENCE',
         duration: '14 Days',
         description:
-            'Journey to the edge of the world. Private icebreaker expedition with extreme-luxury geodesic dome stays on the frozen continent.',
+            'The final frontier of silence. Navigate the southern ice shelf aboard a private icebreaker, followed by a multi-sensory residency in secluded obsidian domes.',
         price: 'From $45,000',
         spots: 'Only 8 spots remaining',
         image:
@@ -21,7 +21,7 @@ const packages = [
         title: 'NAMIBIAN STARSCAPES',
         duration: '9 Days',
         description:
-            'Fly-in safari across the oldest desert on Earth. Sleep under the darkest skies in a private luxury camp reachable only by helicopter.',
+            'Ancient sands and celestial clarity. A vertical ascent into the heart of the Namib, where the horizon dissolves and the stars are within reach.',
         price: 'From $32,000',
         spots: 'Waitlist available',
         image:
@@ -32,7 +32,7 @@ const packages = [
         title: 'ALPINE SUMMIT RETREAT',
         duration: '7 Days',
         description:
-            'Private helicopter access to the most secluded alpine resorts. Luxury chalets, guided glacier hikes, and gourmet mountain dining.',
+            'Above the clouds. A high-altitude sanctuary accessible only by air. Experience the crystalline purity of the peaks from an architectural masterpiece carved into the rock.',
         price: 'From $21,000',
         spots: 'Only 6 spots remaining',
         image:
