@@ -5,16 +5,16 @@ import { useRef } from 'react';
 
 const values = [
     {
-        title: 'AESTHETIC PURITY',
-        description: 'We do not compromise on visual truth. Every domain we curate is vetted for its architectural significance, interior mastery, and absolute harmony with the natural order.',
+        title: 'ARCHITECTURAL TRUTH',
+        description: 'We believe that space is sacred. Every domain in our portfolio is selected for its structural integrity, aesthetic weight, and its ability to vanish into the landscape.',
     },
     {
-        title: 'ABSOLUTE DISCRETION',
-        description: 'For our elite collective, privacy is the ultimate currency. We execute deeply confidential itineraries, utilizing secure, off-the-grid domains and unlisted routes.',
+        title: 'THE ART OF INVISIBILITY',
+        description: 'Privacy is not a feature; it is our foundation. We manage complex itineraries with surgical precision, ensuring our guests remain unseen and untouched.',
     },
     {
-        title: 'LEGACY PRESERVATION',
-        description: 'True luxury safeguards the future. A significant percentage of our proceeds directly funds marine preservation, wildlife protection, and the revival of local artisan heritage.',
+        title: 'ECOLOGICAL STEWARDSHIP',
+        description: 'We do not just visit; we protect. Our operations are designed to leave no trace, while actively funding the restoration of the world\'s most fragile ecosystems.',
     },
 ];
 
