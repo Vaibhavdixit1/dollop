@@ -34,7 +34,7 @@ const Hero = () => {
                 >
                     <span className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-neutral-900 animate-pulse"></span>
                     <span className="ml-2 sm:ml-3 text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-neutral-600">
-                        ARCHITECTS OF THE UNSEEN
+                        THE ARCHITECTS OF ABSENCE
                     </span>
                 </motion.div>
 
@@ -65,7 +65,7 @@ const Hero = () => {
                     transition={{ duration: 1, delay: 0.4 }}
                     className="mx-auto max-w-2xl text-balance text-lg font-medium leading-relaxed text-neutral-600 sm:text-2xl"
                 >
-                    We curate silence. We engineer scarcity. Experience the world through a lens of absolute rarity.
+                    We define the void. We engineer the impossible. Discover a collection of experiences that exist beyond the periphery of the known world.
                 </motion.p>
 
                 {/* Floating Search Widget */}

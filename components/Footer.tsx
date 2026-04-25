@@ -43,7 +43,7 @@ const Footer = () => {
 
                     <div className="lg:col-span-4 space-y-12">
                         <p className="text-2xl font-black leading-tight tracking-tighter uppercase max-w-sm">
-                            Elevating travel experiences with curated escapes and seamless bookings. 
+                            Architecting the impossible. Curating the world's most guarded sanctuaries and unlisted routes. 
                         </p>
                         <div className="flex flex-col gap-4">
                             <span className="text-[10px] font-black tracking-[0.4em] text-white/30 uppercase">Newsletter</span>

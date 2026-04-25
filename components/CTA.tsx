@@ -18,7 +18,7 @@ const CTA = () => {
                     transition={{ duration: 0.5 }}
                     className="text-[10px] sm:text-xs font-black tracking-[0.5em] text-neutral-400 uppercase"
                 >
-                    The Final Frontier
+                    THE EVENT HORIZON
                 </motion.span>
                 <motion.h2 
                     initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ const CTA = () => {
                     className="mt-6 md:mt-8 text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-neutral-900 uppercase leading-[1.1] md:leading-[0.9]"
                 >
                     SEEK THE <br />
-                    <span className="text-neutral-400">EXCEPTIONAL.</span>
+                    <span className="text-neutral-400">UNATTAINABLE.</span>
                 </motion.h2>
                 <motion.p 
                     initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ const CTA = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="mx-auto mt-8 md:mt-12 max-w-2xl text-lg md:text-xl font-medium leading-relaxed text-neutral-600"
                 >
-                    The world is shrinking. True isolation is the last remaining luxury. Secure your passage into the unmapped.
+                    The world is shrinking. True isolation is the last remaining luxury. Secure your passage into the unmapped sectors of existence.
                 </motion.p>
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -47,10 +47,10 @@ const CTA = () => {
                     className="mt-12 md:mt-16 flex flex-col items-center justify-center gap-6 sm:flex-row"
                 >
                     <Link href="/signup" className="group relative w-full sm:w-auto overflow-hidden rounded-full bg-neutral-900 px-10 md:px-12 py-5 md:py-6 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 hover:bg-neutral-800 active:scale-95 shadow-2xl">
-                        <span className="relative z-10">EXPLORE NOW</span>
+                        <span className="relative z-10">SECURE PASSAGE</span>
                     </Link>
                     <Link href="/about" className="group flex items-center gap-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-neutral-900 transition-all hover:gap-6">
-                        Learn our story
+                        THE MANIFESTO
                         <span className="h-[1px] w-8 sm:w-12 bg-black/10 transition-all group-hover:w-16 group-hover:bg-black"></span>
                     </Link>
                 </motion.div>
@@ -59,10 +59,10 @@ const CTA = () => {
             {/* Floating stats */}
             <div className="mt-20 md:mt-24 grid grid-cols-2 gap-8 border-t border-black/5 pt-16 md:pt-24 sm:grid-cols-4">
                 {[
-                    { label: 'Destinations', value: '150+' },
-                    { label: 'Happy Travelers', value: '25k+' },
-                    { label: 'Luxury Hotels', value: '500+' },
-                    { label: 'Years Experience', value: '12+' },
+                    { label: 'ACTIVE SECTORS', value: '150+' },
+                    { label: 'VETTED PATRONS', value: '2k+' },
+                    { label: 'CURATED SANCTUARIES', value: '500+' },
+                    { label: 'SUCCESSFUL EXPEDITIONS', value: '12k+' },
                 ].map((stat, i) => (
                     <motion.div 
                         initial={{ opacity: 0, y: 30 }}

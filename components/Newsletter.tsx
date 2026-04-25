@@ -41,12 +41,12 @@ const Newsletter = () => {
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     className="max-w-3xl"
                 >
-                    <span className="text-[10px] sm:text-xs font-black tracking-[0.6em] text-white/40 uppercase">The Sentinel Dispatch</span>
+                    <span className="text-[10px] sm:text-xs font-black tracking-[0.6em] text-white/40 uppercase">THE PROTOCOL</span>
                     <h2 className="mt-8 text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-white uppercase leading-[0.9]">
-                        RESERVED <br /> ACCESS ONLY
+                        UNLISTED <br /> FREQUENCIES
                     </h2>
                     <p className="mt-12 text-xl font-medium text-white/50 leading-relaxed max-w-xl mx-auto">
-                        Join the inner circle. Gain entry to classified dossiers, private expeditions, and limited-edition retreats restricted to the few.
+                        Access the undocumented. Receive encrypted dispatches regarding private estates, off-manifest expeditions, and the world's most guarded sanctuaries.
                     </p>
                 </motion.div>
 
@@ -68,8 +68,8 @@ const Newsletter = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <h3 className="text-3xl font-black text-white uppercase tracking-tighter">Welcome to the Protocol</h3>
-                            <p className="mt-4 text-white/40 font-black uppercase tracking-widest text-[10px]">Your dossier is being prepared.</p>
+                            <h3 className="text-3xl font-black text-white uppercase tracking-tighter">IDENTITY VERIFIED</h3>
+                            <p className="mt-4 text-white/40 font-black uppercase tracking-widest text-[10px]">Awaiting secure transmission.</p>
                         </motion.div>
                     ) : (
                         <div className="bg-white px-8 py-8 md:px-12 md:py-12 rounded-[40px] md:rounded-[56px] shadow-2xl">
