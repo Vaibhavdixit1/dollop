@@ -59,10 +59,10 @@ const CTA = () => {
             {/* Floating stats */}
             <div className="mt-20 md:mt-24 grid grid-cols-2 gap-8 border-t border-black/5 pt-16 md:pt-24 sm:grid-cols-4">
                 {[
-                    { label: 'ACTIVE SECTORS', value: '150+' },
-                    { label: 'VETTED PATRONS', value: '2k+' },
-                    { label: 'CURATED SANCTUARIES', value: '500+' },
-                    { label: 'SUCCESSFUL EXPEDITIONS', value: '12k+' },
+                    { label: 'UNMAPPED SECTORS', value: '150+' },
+                    { label: 'PATRONS OF THE VOID', value: '2k+' },
+                    { label: 'ARCHITECTURAL ANCHORS', value: '500+' },
+                    { label: 'RESOLVED MANIFESTS', value: '12k+' },
                 ].map((stat, i) => (
                     <motion.div 
                         initial={{ opacity: 0, y: 30 }}
