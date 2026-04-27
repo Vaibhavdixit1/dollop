@@ -68,8 +68,8 @@ const Newsletter = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <h3 className="text-3xl font-black text-white uppercase tracking-tighter">IDENTITY VERIFIED</h3>
-                            <p className="mt-4 text-white/40 font-black uppercase tracking-widest text-[10px]">Awaiting secure transmission.</p>
+                            <h3 className="text-3xl font-black text-white uppercase tracking-tighter">CLEARANCE GRANTED</h3>
+                            <p className="mt-4 text-white/40 font-black uppercase tracking-widest text-[10px]">Secure transmission channel established.</p>
                         </motion.div>
                     ) : (
                         <div className="bg-white px-8 py-8 md:px-12 md:py-12 rounded-[40px] md:rounded-[56px] shadow-2xl">
@@ -92,7 +92,7 @@ const Newsletter = () => {
                                     disabled={status === 'loading'}
                                     className="bg-neutral-900 text-white rounded-3xl md:rounded-full px-12 py-5 font-black uppercase tracking-[0.2em] hover:bg-neutral-800 transition-all disabled:opacity-50 whitespace-nowrap"
                                 >
-                                    {status === 'loading' ? 'Processing...' : 'Subscribe'}
+                                    {status === 'loading' ? 'VERIFYING...' : 'INITIATE'}
                                 </motion.button>
                             </form>
                             <p className="mt-8 text-[9px] text-neutral-400 font-black uppercase tracking-[0.3em]">
