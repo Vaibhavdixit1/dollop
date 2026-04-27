@@ -4,44 +4,44 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
     {
-        quote: "Voyage transformed our honeymoon into a cinematic experience we'll never forget. Every detail was perfection.",
-        author: "Sarah & Mark",
-        role: "Global Travelers",
-        avatar: "https://i.pravatar.cc/150?u=sarah",
-        rating: 5
-    },
-    {
-        quote: "The private access to the Amalfi coast villas was something I didn't think was possible. Truly world-class.",
+        quote: "The coordinates were exact. The silence was absolute. They found a way into the unfindable.",
         author: "Julian Chen",
-        role: "Design Architect",
+        role: "Spatial Architect",
         avatar: "https://i.pravatar.cc/150?u=julian",
         rating: 5
     },
     {
-        quote: "From Patagonia to the Arctic, their choice of guides and local experiences is unmatched in the luxury space.",
+        quote: "Total architectural isolation. I've never experienced anything that felt so... deliberate.",
+        author: "Sarah & Mark",
+        role: "Estate Collectors",
+        avatar: "https://i.pravatar.cc/150?u=sarah",
+        rating: 5
+    },
+    {
+        quote: "Off-manifest travel requires a level of trust most agencies can't provide. Voyage is the exception.",
         author: "Elena Rodriguez",
-        role: "Adventure Photographer",
+        role: "Visual Archivist",
         avatar: "https://i.pravatar.cc/150?u=elena",
         rating: 5
     },
     {
-        quote: "A seamless blend of modern comfort and ancient culture. They understand the soul of a traveler.",
+        quote: "The transition from the known world to the unknown was seamless. A masterclass in logistics.",
         author: "James Wilson",
-        role: "Tech Executive",
+        role: "Protocol Director",
         avatar: "https://i.pravatar.cc/150?u=james",
-        rating: 4
+        rating: 5
     },
     {
-        quote: "An unparalleled journey. Their network of private chefs and exclusive venues exceeded all expectations.",
+        quote: "Privacy is no longer a luxury; it's a necessity. They understand the value of the void.",
         author: "Sophie Laurent",
-        role: "Restaurateur",
+        role: "Heritage Curator",
         avatar: "https://i.pravatar.cc/150?u=sophie",
         rating: 5
     },
     {
-        quote: "I've travelled the globe, but Voyage managed to surprise me with unseen locations and immaculate service.",
+        quote: "We existed on the periphery of the map for three weeks. It was the first time I felt truly present.",
         author: "David Kim",
-        role: "Entrepreneur",
+        role: "Systems Designer",
         avatar: "https://i.pravatar.cc/150?u=david",
         rating: 5
     }

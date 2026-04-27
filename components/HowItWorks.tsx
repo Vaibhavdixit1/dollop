@@ -7,26 +7,26 @@ const steps = [
     {
         step: '01',
         title: 'INITIAL DOSSIER',
-        description: 'We conduct an in-depth profiling of your travel history, architectural preferences, and dietary requirements to establish your bespoke traveler identity.',
-        detail: 'Private profiling',
+        description: 'We conduct a surgical profiling of your behavioral patterns, architectural triggers, and sensory requirements to establish a bespoke traveler identity.',
+        detail: 'Behavioral Profiling',
     },
     {
         step: '02',
         title: 'ARCHITECTING THE PATH',
-        description: 'Our global intelligence network secures off-market estates, private airstrips, and heavily restricted nature reserves.',
-        detail: 'Asset securing',
+        description: 'Our global intelligence network requisitions off-market estates, private airstrips, and heavily restricted natural sanctuaries.',
+        detail: 'Asset Requisition',
     },
     {
         step: '03',
         title: 'THE DISPATCH',
-        description: 'You receive a classified itinerary brief. From here, our logistics team manages airspace regulations, ground security, and staff vetting.',
-        detail: 'Pre-flight prep',
+        description: 'You receive an encrypted itinerary brief. From here, our logistics team manages airspace clearance, tactical security, and staff vetting.',
+        detail: 'Tactical Briefing',
     },
     {
         step: '04',
         title: 'COMPLETE IMMERSION',
-        description: 'Upon arrival, the world is yours. Our shadow-concierge team works invisibly in the background to ensure absolute perfection.',
-        detail: 'Shadow support',
+        description: 'Upon arrival, the world recalibrates around you. Our shadow-concierge team operates invisibly to ensure absolute perfection.',
+        detail: 'Invisible Orchestration',
     },
 ];
 
